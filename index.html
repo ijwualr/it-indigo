@@ -1,11 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Isaac Wilson - IT Indigo</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-  </body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Indigo | Isaac Wilson</title>
+    <meta name="description" content="Keyword Rich Description">
+    <meta name="author" content="Isaac Wilson">
+    <link rel="icon" type="image/x-icon" href="homepage/assets/indigo.png" alt="Website Favicon">
+    <link href="homepage/assets/css/style.css" rel="stylesheet" />
+    <script src="homepage/assets/js/app.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <img src="homepage/assets/indigo.png" alt="Profile Picture" class="img-right" />
+            <header role="banner" class="primary">
+                <h1>Isaac Wilson - IT Indigo Assignments</h1>
+            </header>
+            <nav class="primary" id="list">
+                <ul>
+                </ul> 
+            </nav>
+        </main>
+    </div>
+    <!-- Loading transition overlay -->
+    <div id="transition-overlay" class="transition-container">
+        <div>Loading...</div>
+    </div>
+    <script>
+        const transitionOverlay = document.getElementById('transition-overlay');
+        document.querySelectorAll('nav.primary a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                transitionOverlay.classList.add('show');
+                setTimeout(() => {
+                    window.location.href = this.href; 
+                }, 500);
+            });
+        });
+    </script>
+</body>
 </html>
