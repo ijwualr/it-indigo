@@ -1,0 +1,88 @@
+/* Base layout */
+body {
+  margin: 0;
+  padding: 20px;
+  display: block;
+  text-align: left;
+}
+
+/* Page title */
+h1 {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Section layout */
+section {
+  width: 100%;
+  max-width: 960px;
+  margin-bottom: 40px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Headings inside sections */
+section h2, section h3 {
+  margin-top: 0;
+  text-align: left;
+}
+
+/* Lists */
+ul, ol, dl {
+  margin-left: 40px;
+}
+
+/* Description list spacing */
+dl dt {
+  margin-top: 10px;
+  font-weight: bold;
+}
+dl dd {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+/* Quotes */
+blockquote {
+  margin-left: 40px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* Images */
+img {
+  display: block;
+  margin: 20px 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Figure alignment */
+figure {
+  margin: 0;
+  text-align: left;
+}
+figcaption {
+  margin-top: 5px;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  text-align: left;
+  margin-top: 40px;
+}
