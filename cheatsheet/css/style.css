@@ -81,6 +81,28 @@ figcaption {
   text-align: left;
 }
 
+/* Contact Form: Ensure all text is left-aligned */
+#contact-form,
+#contact-form * {
+  text-align: left;
+}
+
+/* Table cells in form */
+#contact-form th,
+#contact-form td {
+  vertical-align: top;
+}
+
+/* Inputs, selects, and textareas */
+#contact-form input,
+#contact-form textarea,
+#contact-form select {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
 /* Footer */
 footer {
   text-align: left;
