@@ -92,7 +92,6 @@
 <li><a href="mailto:ijwilson@ualr.edu">Email Link</a></li>
 </ul>
 </section>
-</body>
 
 <!-- Tables -->
 <section id="tables">
@@ -146,6 +145,43 @@
   <img src="https://static.vecteezy.com/system/resources/previews/021/680/501/non_2x/gradient-indigo-background-illustration-free-photo.jpg" alt="External Indigo Wallpaper" width="300" />
 </section>
 
+<!-- Contact Form -->
+<section id="contact-form">
+  <h2>Contact Form</h2>
+  <form action="processing-script.php" method="post">
+    <fieldset>
+      <legend>Your Information</legend>
+
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" name="full-name" placeholder="Jane Doe" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="501-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+
+      <label for="address">Mailing Address:</label>
+      <textarea id="address" name="address" rows="3" placeholder="123 Main St, Little Rock, AR"></textarea>
+
+      <label for="fav-color">Favorite Color:</label>
+      <select id="fav-color" name="fav-color" required>
+        <option value="" disabled selected>Select a color</option>
+        <option value="R">Red</option>
+        <option value="G">Green</option>
+        <option value="B">Blue</option>
+        <option value="O">Orange</option>
+        <option value="P">Purple</option>
+      </select>
+
+      <label for="comments">Comments or Questions:</label>
+      <textarea id="comments" name="comments" rows="4" placeholder="Let us know how we can help!"></textarea>
+
+      <input type="submit" value="Submit Info" />
+    </fieldset>
+  </form>
+</section>
+</body>
 
 <!-- Footer -->
  <section id="footer">
