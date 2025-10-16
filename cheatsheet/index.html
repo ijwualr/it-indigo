@@ -15,8 +15,6 @@
 <!--Headings-->
 <h1>Heading 1</h1>
 <h2>Heading 2</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea perferendis sed cupiditate repellat officiis.</p>
-<h3>Heading 3</h3>
 <h4>Heading 4</h4>
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>
@@ -32,7 +30,7 @@
 <li>Item 3</li>
 <li>Item 4</li>
 </ul>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nostrum, fuga molestiae minima quasi error corrupti molestias? Quasi eum in laborum. Nemo eligendi itaque minima praesentium provident. Optio nesciunt animi iusto accusantium exercitationem, laudantium neque eum, est impedit aperiam aliquam quas, ipsum maiores veniam ullam. Ut explicabo iusto assumenda, consectetur pariatur porro sapiente quas corporis, accusamus in quod rerum repudiandae unde dolor illum deleniti aut tempore! Doloremque quasi dignissimos quisquam iure voluptatem maiores doloribus cumque officia facilis soluta earum neque aut labore, commodi modi mollitia autem distinctio porro nesciunt rerum sed. Consectetur quaerat totam nemo. Praesentium esse, officia tempore saepe corrupti quis voluptas delectus ipsam assumenda corporis odit, accusantium dolorum perspiciatis accusamus tempora est culpa inventore debitis quam ratione ullam. Repellendus nobis, aliquid neque repudiandae aspernatur, deserunt eos pariatur reprehenderit cum quaerat facere placeat error officia minima ad! Praesentium ratione quaerat, voluptate atque reiciendis esse vitae in veniam nam, eligendi odio soluta aliquam mollitia accusantium laborum itaque illo, eius qui eaque hic harum voluptatem. Corporis officiis impedit numquam. Corrupti sed nisi fugiat maxime porro eos? Neque velit fugit perferendis numquam ut nostrum nemo cumque commodi. Doloremque beatae, blanditiis repudiandae est repellendus nihil atque itaque suscipit perferendis eveniet rerum esse veniam.</p>
+
 
 <!-- Ordered List Example -->
 <h3>Ordered Lists</h3>
@@ -139,6 +137,7 @@
     <img src="/homepage/assets/img/indigo.png" alt="Indigo aesthetic background" width="300" />
     <figcaption>Fig.1 - A calming indigo aesthetic used as background.</figcaption>
   </figure>
+  <br>
 
   <!-- External Image -->
   <h3>External Image</h3>
@@ -154,15 +153,19 @@
 
       <label for="full-name">Full Name:</label>
       <input type="text" id="full-name" name="full-name" placeholder="Jane Doe" required />
+      <br>
 
       <label for="email">Email Address:</label>
       <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
+       <br>
+ 
       <label for="phone">Phone Number:</label>
       <input type="tel" id="phone" name="phone" placeholder="501-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+       <br>
 
       <label for="address">Mailing Address:</label>
       <textarea id="address" name="address" rows="3" placeholder="123 Main St, Little Rock, AR"></textarea>
+      <br>
 
       <label for="fav-color">Favorite Color:</label>
       <select id="fav-color" name="fav-color" required>
@@ -173,14 +176,40 @@
         <option value="O">Orange</option>
         <option value="P">Purple</option>
       </select>
+       <br>
 
       <label for="comments">Comments or Questions:</label>
       <textarea id="comments" name="comments" rows="4" placeholder="Let us know how we can help!"></textarea>
+      <br>
 
       <input type="submit" value="Submit Info" />
     </fieldset>
   </form>
 </section>
+
+<!-- Semantics -->
+<section id="contact-form">
+  <h2>Text Level Semantics</h2>
+  <p><del>Lorem ipsum dolor sit amet consectetur adipisicing elit.</del><em>Assumenda nostrum, fuga molestiae minima quasi error corrupti molestias? Quasi eum in laborum.</em><strong>Nemo eligendi itaque minima praesentium provident.</strong><br><sub>Neque velit fugit perferendis numquam ut nostrum nemo cumque commodi.</sub> <sup>Doloremque beatae, blanditiis repudiandae est repellendus nihil atque itaque suscipit perferendis eveniet rerum esse veniam.</sup></p>
+  </section>
+
+  <!-- Structual Elements -->
+  <section id="structural-elements">
+    <h2>Structural Elements</h2>
+    <!-- Preformat -->
+    <pre>
+<code>&lt;main&gt;</code>
+<code>&lt;section&gt;</code>
+<code>&lt;nav&gt;</code>
+<code>&lt;header&gt;</code>
+<code>&lt;footer&gt;</code>
+<code>&lt;aside&gt;</code>
+<code>&lt;article&gt;</code>
+<code>&lt;figure&gt;</code>
+<code>&lt;figcaption&gt;</code>
+    </pre>
+  </section>
+
 </body>
 
 <!-- Footer -->
