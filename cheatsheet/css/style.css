@@ -81,7 +81,7 @@ figcaption {
   text-align: left;
 }
 
-/* Contact Form: Ensure all text is left-aligned */
+/* Contact Form */
 #contact-form,
 #contact-form * {
   text-align: left;
@@ -103,7 +103,7 @@ figcaption {
   cursor: pointer;
 }
 
-/* Inputs, selects, and textareas */
+/* Inputs, selects, and text areas */
 #contact-form input,
 #contact-form textarea,
 #contact-form select {

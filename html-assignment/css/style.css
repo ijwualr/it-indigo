@@ -1,4 +1,4 @@
-/* Align all content to the left */
+/* Align content to the left */
 body, main, header, nav, section, footer {
   text-align: left;
   margin: 0 auto;
@@ -8,7 +8,6 @@ body, main, header, nav, section, footer {
   color: #333;
 }
 
-/* remove center alignment from any inherited styles */
 h1, h2, h3, h4, h5, p, ul, ol, dl, table {
   text-align: left;
 }

@@ -1,19 +1,4 @@
-:root {
-  --primary-color: rgb(143, 39, 228);
-  --header-bg-color: #e5e5f7;
-  --nav-link-bg-color: #511a81;
-  --nav-link-hover-bg-color: #d477e2;
-  --border-color: #f0f0f6;
-  --text-color: darkblue;
-  --light-bg-color: lightblue;
-  --image-border-color: rgb(254, 254, 254);
-  --image-border-radius: 50px;
-  --spacing-unit: 20px;
-  --font-family-base: "Open Sans", sans-serif;
-  --font-family-alt: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-/* Reset and layout */
+/* Base Layout */
 * {
   margin: 0;
   padding: 0;
@@ -27,12 +12,12 @@ html, body {
 }
 
 body {
-  font-family: var(--font-family-base);
+  font-family: "Open Sans", sans-serif;
   background-image: url(../img/gradient-indigo-background-illustration-free-photo.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: var(--primary-color);
+  background-color: rgb(143, 39, 228);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -43,16 +28,16 @@ body {
 
 /* Header */
 header {
-  background-color: var(--header-bg-color);
-  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, var(--header-bg-color) 10px),
-                    repeating-linear-gradient(var(--border-color) 55, var(--border-color));
+  background-color: #e5e5f7;
+  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 10px),
+  repeating-linear-gradient(#f0f0f6 55, #f0f0f6);
   background-repeat: repeat;
   line-height: 3rem;
-  padding: var(--spacing-unit);
+  padding: 20px;
   color: rgb(8, 8, 82);
   text-shadow: 1px 1px #000000;
-  margin-bottom: var(--spacing-unit);
-  border-radius: var(--image-border-radius);
+  margin-bottom: 20px;
+  border-radius: 50px;
 }
 
 header.primary h1 {
@@ -79,9 +64,9 @@ nav.primary a {
   display: block;
   padding: 0.75rem 1rem;
   text-decoration: none;
-  background-color: var(--nav-link-bg-color);
+  background-color: #511a81;
   color: white;
-  border: 2px solid var(--border-color);
+  border: 2px solid #f0f0f6;
   border-radius: 5px;
   text-align: center;
   width: 100%;
@@ -89,7 +74,7 @@ nav.primary a {
 }
 
 nav.primary a:hover {
-  background-color: var(--nav-link-hover-bg-color);
+  background-color: #d477e2;
   box-shadow: 5px 5px 5px 0px rgba(22, 32, 77, 0.75);
 }
 
@@ -98,22 +83,22 @@ nav.primary a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 4px double var(--border-color);
-  background-color: var(--light-bg-color);
+  border: 4px double #f0f0f6;
+  background-color: lightblue;
   gap: 1rem;
-  margin: var(--spacing-unit);
-  padding: var(--spacing-unit);
+  margin: 20px;
+  padding: 20px;
   flex-grow: 1;
 }
 
 #content p {
-  margin-left: var(--spacing-unit);
-  font-family: var(--font-family-alt);
-  color: var(--text-color);
+  margin-left: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: darkblue;
 }
 
 #content h2 {
-  color: var(--text-color);
+  color: darkblue;
   border-bottom: 2px solid black;
   margin-left: 25px;
   border-radius: 10px;
@@ -121,7 +106,7 @@ nav.primary a:hover {
 
 #content li {
   list-style-type: square;
-  margin-left: var(--spacing-unit);
+  margin-left: 20px;
 }
 
 /* Wrapper */
@@ -139,8 +124,8 @@ nav.primary a:hover {
   height: auto;
   display: block;
   margin: 0 auto 1rem;
-  border: 2px solid var(--image-border-color);
-  border-radius: var(--image-border-radius);
+  border: 2px solid rgb(254, 254, 254);
+  border-radius: 50px;
   float: none;
 }
 
@@ -174,12 +159,4 @@ nav.primary a:hover {
   background-color: rgba(44, 2, 47, 0.6);
   padding: 20px 40px;
   border-radius: 8px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .transition-container div {
-    font-size: 3rem;
-    padding: 15px 30px;
-  }
 }
