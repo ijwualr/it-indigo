@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Patient Registration</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <h1>New Patient Registration</h1>
+    </header>
+
+    <p>Please fill out the form below:</p>
+
+    <form action="https://brucebauer.info/assets/ITEC3650/datadump.php" method="post">
+
+        <label class="formlabel">First Name:</label> <input type="text" name="FirstName" size="30" maxlength="30"><br>
+        <label class="formlabel">Middle Initial:</label> <input type="text" name="MiddleInitial" size="1" maxlength="1"><br>
+        <label class="formlabel">Last Name:</label> <input type="text" name="LastName" size="30" maxlength="30"><br>
+        <label class="formlabel">Email:</label> <input type="email" name="Email" size="30" maxlength="30"><br>
+
+        <label class="formlabel">Sex:</label>
+        <input type="radio" id="sexMale" name="Sex" value="Male">
+        <label for="sexMale" class="radio-group">Male</label>
+        <input type="radio" id="sexFemale" name="Sex" value="Female">
+        <label for="sexFemale" class="radio-group">Female</label>
+        <input type="radio" id="sexNA" name="Sex" value="N/A">
+        <label for="sexNA" class="radio-group">N/A</label><br>
+
+        <label class="formlabel">Birthday:</label> <input type="text" name="Birthday" size="10" maxlength="10"><br>
+        <label class="formlabel">Height (inches):</label> <input type="text" name="Height" size="5" maxlength="3"><br>
+        <label class="formlabel">Weight (pounds):</label> <input type="text" name="Weight" size="5" maxlength="3"><br>
+
+        <hr class="section-separator">
+
+        <label class="formlabel">Phone Number:</label> <input type="text" name="PhoneNumber" size="14" maxlength="14"><br>
+
+        <label class="formlabel">Marital Status:</label>
+        <select name="MaritalStatus">
+            <option value="">Select a Status...</option>
+            <option value="S">Single</option>
+            <option value="M">Married</option>
+            <option value="D">Divorced</option>
+            <option value="W">Widowed</option>
+        </select><br>
+
+        <label class="formlabel">Address:</label> <input type="text" name="Address" size="50" maxlength="50"><br>
+        
+        <label class="formlabel">City/State/Zip:</label> 
+        <input type="text" name="City" size="20" maxlength="30" style="width: 150px;">, 
+        <select name="State" style="width: 120px;">
+            <option value="">Select a State...</option>
+            <option value="AL">AL</option>
+            <option value="AR">AR</option>
+            </select>
+        <input type="text" name="Zip" size="5" maxlength="5" style="width: 60px;"><br>
+
+        <hr class="section-separator">
+
+        <label class="formlabel">Taking Medications:</label>
+        <input type="radio" id="medsYes" name="TakingMedications" value="Yes">
+        <label for="medsYes" class="radio-group">Yes</label>
+        <input type="radio" id="medsNo" name="TakingMedications" value="No">
+        <label for="medsNo" class="radio-group">No</label><br>
+
+        <div style="margin-top: 10px;">
+            <label class="meds-label-special" for="MedicationsList">If yes, list medications here:</label>
+            <div class="textarea-container">
+                <textarea id="MedicationsList" name="MedicationsList" rows="4" cols="50"></textarea><br>
+            </div>
+        </div>
+
+        <div style="margin-left: 170px; margin-top: 15px;">
+            <input type="submit" value="Submit Patient Form">
+        </div>
+
+    </form>
+
+</body>
+</html>

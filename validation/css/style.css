@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  max-width: 650px;
+}
+
+header {
+  background-color: transparent;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+form {
+  margin-top: 1em;
+}
+
+.formlabel {
+  display: inline-block;
+  width: 150px;
+  text-align: left; 
+  padding: 5px;
+  font-weight: bold;
+}
+
+.radio-group label {
+  font-weight: normal;
+  margin-right: 15px;
+  padding: 0;
+  width: auto;
+}
+
+.meds-label-special {
+  display: block;
+  margin-left: 0; 
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.textarea-container {
+  margin-left: 0; 
+}
+
+textarea {
+  max-width: 400px;
+}
+
+.section-separator {
+  border: 0;
+  height: 1px;
+  background-color: #000;
+  margin: 20px 0;
+}
