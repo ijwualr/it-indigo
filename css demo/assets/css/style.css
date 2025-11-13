@@ -93,6 +93,27 @@ section h2 {
   color: #101340;
   margin-bottom: 20px;
 }
+
+#content h2::before {
+  content: "✦";
+  color: #0ABFBF;  
+  margin-right: 16px;  
+  font-size: 2rem; 
+  vertical-align: middle;
+}
+  #blog.container > h2::before {
+  content: "✦";
+  color: #0ABFBF;    
+   margin-right: 16px;  
+  font-size: 2rem; 
+  vertical-align: middle;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #101340;
+  margin-bottom: 20px;
+}
 section p {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -111,8 +132,7 @@ article {
   text-align: center;
 }
 
-article h3,
-article p,
+
 article img {
   margin-left: auto;
   margin-right: auto;
