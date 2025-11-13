@@ -2,9 +2,6 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-*, *::before, *::after {
-  box-sizing: inherit;
-}
 
 body {
   background-color: #101340;
@@ -176,6 +173,7 @@ footer {
   font-size: 0.9rem;
   border-top: 3px solid #0ABFBF;
 }
+
 footer a {
   color: #0ABFBF;
   text-decoration: none;
@@ -184,6 +182,13 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+aside .container {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:40px;
+}
+
 
 /* ------------ Responsive -----------------*/
 
