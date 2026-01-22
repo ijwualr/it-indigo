@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="description" content="Homepage" />
     <meta name="author" content="Isaac Wilson" />
-    <link href="css/style.css" rel="stylesheet" />
-     <link rel="icon" type="image/x-icon" href="cheatsheets-icon.png" alt="Website Favicon">
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+     <link rel="icon" type="image/x-icon" href="img/cheatsheets-icon.png" alt="Website Favicon">
     <title>HTML Cheatsheet</title>
 </head>
 <body>
-<h1>HTML Cheatsheet</h1>
+<h1 class="page-title">HTML Cheatsheet</h1>
 <section id="headings">
 <!--Headings-->
 <h1>Heading 1</h1>
@@ -18,6 +19,20 @@
 <h4>Heading 4</h4>
 <h5>Heading 5</h5>
 <h6>Heading 6</h6>
+<div class="markup">
+      <pre>
+    <code class="language-markup">
+ <script type="text/plain" class="language-markup">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+   </script>
+    </code>
+</pre>
+    </div>
 </section>
 
 <section id="lists">
@@ -30,6 +45,20 @@
 <li>Item 3</li>
 <li>Item 4</li>
 </ul>
+<div class="markup">
+      <pre>
+    <code class="language-markup">
+ <script type="text/plain" class="language-markup">
+    <ul>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+    </ul>
+   </script>
+    </code>
+</pre>
+    </div>
 
 
 <!-- Ordered List Example -->
@@ -40,6 +69,20 @@
 <li>Item 7</li>
 <li>Item 8</li>
 </ol>
+<div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+    <ol>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+    </ol>
+       </script>
+    </code>
+    </pre>
+    </div>
 
 <!-- Descriptive List Example -->
 <h3>Descriptive List</h3>
@@ -56,6 +99,25 @@
   <dt>Accessibility</dt>
   <dd>Designing web content so it's usable by people of all abilities and disabilities.</dd>
 </dl>
+<div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+     <dl>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+    </dl>
+       </script>
+    </code>
+    </pre>
+    </div>
 </section>
 
 <section id="quotes">
@@ -89,6 +151,24 @@
 <li><a href="https://en.wikipedia.org/wiki/Kitten#Nutrition" target="_blank">Anchor Link</a></li>
 <li><a href="mailto:ijwilson@ualr.edu">Email Link</a></li>
 </ul>
+ <div class="markup">
+      <pre>
+    <code class="language-markup">
+ <script type="text/plain" class="language-markup">
+    <ul>
+      <li><a href="https://ualr.edu" target="_blank" 
+      title="This is a verbose description of absolute 
+      link">Absolute Link</a></li>
+      <li><a href="resources/pages/about.html" 
+      target="_blank">Relative Link</a></li>
+      <li><a href="#top">Anchor Links</a></li>
+      <li><a href="mailto:email@address.com">
+      Email Link</a></li>
+    </ul>
+   </script>
+    </code>
+    </pre>
+    </div>
 </section>
 
 <!-- Tables -->
@@ -129,13 +209,13 @@
 
   <!-- Basic Image -->
   <h3>Basic Image</h3>
-  <img src="img/cheatsheets-icon.png" alt="Cheatsheet logo" width="300" />
+  <img src="/homepage/assets/img/indigo.png" alt="Cheatsheet logo" width="300" />
 
   <!-- Image with Caption -->
   <h3>Image with Caption</h3>
   <figure>
-    <img src="/homepage/assets/img/indigo.png" alt="Indigo aesthetic background" width="300" />
-    <figcaption>Fig.1 - A calming indigo aesthetic used as background.</figcaption>
+    <img src="assets/img/cheatsheets-icon.png" alt="Indigo aesthetic background" width="300" />
+    <figcaption>Fig.1 - Website Favicon</figcaption>
   </figure>
   <br>
 
@@ -191,6 +271,15 @@
 <section id="contact-form">
   <h2>Text Level Semantics</h2>
   <p><del>Lorem ipsum dolor sit amet consectetur adipisicing elit.</del><em>Assumenda nostrum, fuga molestiae minima quasi error corrupti molestias? Quasi eum in laborum.</em><strong>Nemo eligendi itaque minima praesentium provident.</strong><br><sub>Neque velit fugit perferendis numquam ut nostrum nemo cumque commodi.</sub> <sup>Doloremque beatae, blanditiis repudiandae est repellendus nihil atque itaque suscipit perferendis eveniet rerum esse veniam.</sup></p>
+  <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+          <p><del>Lorem ipsum dolor sit amet consectetur adipisicing elit.</del><em>Assumenda nostrum, fuga molestiae minima quasi error corrupti molestias? Quasi eum in laborum.</em><strong>Nemo eligendi itaque minima praesentium provident.</strong><br><sub>Neque velit fugit perferendis numquam ut nostrum nemo cumque commodi.</sub> <sup>Doloremque beatae, blanditiis repudiandae est repellendus nihil atque itaque suscipit perferendis eveniet rerum esse veniam.</sup></p>
+ </script>
+    </code>
+    </pre>
+    </div>
   </section>
 
   <!-- Structual Elements -->
