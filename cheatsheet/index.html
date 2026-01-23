@@ -140,6 +140,31 @@
 <!-- Abbreviation example -->
   <h3>Abbreviation</h3>
 <p>Learning <abbr title="HyperText Markup Language">HTML</abbr> is the first step toward building the web.</p>
+<div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+<!-- Blockquote example -->
+<h3>Blockquotes</h3>
+<blockquote cite="https://www.w3.org/TR/html52/"> 
+“HTML is the World Wide Web’s core markup language.”
+</blockquote>
+
+<!-- Inline quote example -->
+<h3>Inline Quotes</h3>
+<p>The instructor said, <q>Always close your tags properly.</q> It’s a simple but powerful habit.</p>
+
+<!-- Citation example -->
+<h3>Citation Quotes</h3>
+<p><cite>The Elements of User Experience</cite> by Jesse James Garrett is a foundational text in UX design.</p>
+
+<!-- Abbreviation example -->
+  <h3>Abbreviation</h3>
+<p>Learning <abbr title="HyperText Markup Language">HTML</abbr> is the first step toward building the web.</p>
+ </script>
+    </code>
+    </pre>
+    </div>
 </section>
 
 <!-- Hyperlinks -->
@@ -155,16 +180,10 @@
       <pre>
     <code class="language-markup">
  <script type="text/plain" class="language-markup">
-    <ul>
-      <li><a href="https://ualr.edu" target="_blank" 
-      title="This is a verbose description of absolute 
-      link">Absolute Link</a></li>
-      <li><a href="resources/pages/about.html" 
-      target="_blank">Relative Link</a></li>
-      <li><a href="#top">Anchor Links</a></li>
-      <li><a href="mailto:email@address.com">
-      Email Link</a></li>
-    </ul>
+<li> <a href="index.html" title="Relative Link">Relative Link</a></li>
+<li> <a href="https://wayandsoul.blog">Absolute Link</a></li></li>
+<li><a href="https://en.wikipedia.org/wiki/Kitten#Nutrition" target="_blank">Anchor Link</a></li>
+<li><a href="mailto:ijwilson@ualr.edu">Email Link</a></li>
    </script>
     </code>
     </pre>
@@ -202,6 +221,40 @@
       </tr>
     </tbody>
   </table>
+  <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+        <table border="1">
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Course</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monday</td>
+        <td>Intro to Graphic Design</td>
+        <td>10:00 AM – 11:30 AM</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Mobile Web Development</td>
+        <td>1:00 PM – 2:30 PM</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Usability Testing Lab</td>
+        <td>3:00 PM – 4:30 PM</td>
+      </tr>
+    </tbody>
+  </table>
+   </script>
+    </code>
+    </pre>
+    </div>
 </section>
 
 <section id="images">
@@ -217,11 +270,32 @@
     <img src="assets/img/cheatsheets-icon.png" alt="Indigo aesthetic background" width="300" />
     <figcaption>Fig.1 - Website Favicon</figcaption>
   </figure>
-  <br>
 
   <!-- External Image -->
   <h3>External Image</h3>
   <img src="https://static.vecteezy.com/system/resources/previews/021/680/501/non_2x/gradient-indigo-background-illustration-free-photo.jpg" alt="External Indigo Wallpaper" width="300" />
+   <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+  <!-- Basic Image -->
+  <h3>Basic Image</h3>
+  <img src="/homepage/assets/img/indigo.png" alt="Cheatsheet logo" width="300" />
+
+  <!-- Image with Caption -->
+  <h3>Image with Caption</h3>
+  <figure>
+    <img src="assets/img/cheatsheets-icon.png" alt="Indigo aesthetic background" width="300" />
+    <figcaption>Fig.1 - Website Favicon</figcaption>
+  </figure>
+
+  <!-- External Image -->
+  <h3>External Image</h3>
+  <img src="https://static.vecteezy.com/system/resources/previews/021/680/501/non_2x/gradient-indigo-background-illustration-free-photo.jpg" alt="External Indigo Wallpaper" width="300" />
+   </script>
+    </code>
+    </pre>
+    </div>
 </section>
 
 <!-- Contact Form -->
@@ -265,6 +339,53 @@
       <input type="submit" value="Submit Info" />
     </fieldset>
   </form>
+  <div class="markup">
+      <pre>
+    <code class="language-markup">
+      <script type="text/plain" class="language-markup">
+
+      <form action="processing-script.php" method="post">
+    <fieldset>
+      <legend>Your Information</legend>
+
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" name="full-name" placeholder="Jane Doe" required />
+      <br>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+       <br>
+ 
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="501-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+       <br>
+
+      <label for="address">Mailing Address:</label>
+      <textarea id="address" name="address" rows="3" placeholder="123 Main St, Little Rock, AR"></textarea>
+      <br>
+
+      <label for="fav-color">Favorite Color:</label>
+      <select id="fav-color" name="fav-color" required>
+        <option value="" disabled selected>Select a color</option>
+        <option value="R">Red</option>
+        <option value="G">Green</option>
+        <option value="B">Blue</option>
+        <option value="O">Orange</option>
+        <option value="P">Purple</option>
+      </select>
+       <br>
+
+      <label for="comments">Comments or Questions:</label>
+      <textarea id="comments" name="comments" rows="4" placeholder="Let us know how we can help!"></textarea>
+      <br>
+
+      <input type="submit" value="Submit Info" />
+    </fieldset>
+  </form>
+   </script>
+    </code>
+    </pre>
+    </div>
 </section>
 
 <!-- Semantics -->
