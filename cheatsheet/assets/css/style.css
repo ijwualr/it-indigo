@@ -103,7 +103,7 @@ section[id] {
 /* Headings Section */
 #headings {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr; 
   gap: var(--space-lg);
   align-items: flex-start;
 }
@@ -113,7 +113,7 @@ section[id] {
 }
 
 #headings .markup {
-  grid-column: 2;
+  grid-column: 1;
   background: var(--code-bg);
   padding: var(--space);
   border-radius: var(--radius);
@@ -124,6 +124,7 @@ section[id] {
   justify-self: center;
   align-self: start;
 }
+
 
 /*  Lists */
 #lists {
