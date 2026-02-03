@@ -1,61 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Indigo | Isaac Wilson</title>
-    <meta name="description" content="Homepage" />
-    <meta name="author" content="Isaac J Wilson" />
-    <link rel="icon" type="image/x-icon" href="homepage/assets/img/indigo.png" alt="Website Favicon">
-    <link href="homepage/assets/css/style.css" rel="stylesheet" />
-    <script src="homepage/assets/js/app.js" rel="javascript"></script>
+
+    <!-- Correct CSS path -->
+    <link rel="stylesheet" href="homepage/assets/css/style.css">
 </head>
+
 <body>
-    <div class="wrapper">
+
+<div class="wrapper">
+
     <main>
-        <img src="homepage/assets/img/indigo.png" alt="Profile Picture" class="img-right" />
+
+        <!-- Profile Image -->
+        <img src="homepage/assets/img/indigo.png" alt="Profile Picture" class="img-right">
+
+        <!-- Header -->
         <header role="banner" class="primary">
             <h1>Isaac Wilson - IT Indigo Assignments</h1>
         </header>
 
-       <nav class="primary" id="list">
-    <div class="semester-column">
-        <h2>Semester 1</h2>
-        <ul>
-            <li><a href="cheatsheet/index.html">Cheatsheet</a></li>
-            <li><a href="html-assignment/index.html">HTML Assignment</a></li>
-            <li><a href="css demo/index.html">CSS Demo</a></li>
-            <li><a href="validation/index.html">Form Validation</a></li>
-            <li><a href="https://itindigoisaacwilson.wordpress.com">WordPress Site</a></li>
-            <li><a href="homepage/assets/img/flexbox defense.png">Flexbox Defense</a></li>
-        </ul>
-    </div>
+        <!-- Navigation Columns -->
+        <nav class="primary" id="list">
 
-    <div class="semester-column">
-        <h2>Semester 2</h2>
-        <ul>
-            <li><a href="circle-calculations/index.html">Circle Calculations</a></li>
-            <li><a href="js-calculator/index.html">Javascript Calculator</a></li>
-        </ul>
-    </div>
-</nav>
+            <!-- Semester 1 -->
+            <div class="semester-column">
+                <h2>Semester 1</h2>
+                <ul>
+                    <li><a href="cheatsheet/index.html">Cheatsheet</a></li>
+                    <li><a href="html-assignment/index.html">HTML Assignment</a></li>
+                    <li><a href="css-demo/index.html">CSS Demo</a></li>
+                    <li><a href="validation/index.html">Form Validation</a></li>
+                    <li><a href="https://itindigoisaacwilson.wordpress.com">WordPress Site</a></li>
+                    <li><a href="assets/img/flexbox defense.png">Flexbox Defense</a></li>
+                </ul>
+            </div>
 
+            <!-- Semester 2 -->
+            <div class="semester-column">
+                <h2>Semester 2</h2>
+                <ul>
+                    <li><a href="circle-calculations/index.html">Circle Calculations</a></li>
+                    <li><a href="js-calculator/index.html">Javascript Calculator</a></li>
+                </ul>
+            </div>
 
-    <!--Loading Overlay-->
-    <div id="transition-overlay" class="transition-container">
-        <div>Loading...</div>
-    </div>
-    <script>
-        const transitionOverlay = document.getElementById('transition-overlay');
-        document.querySelectorAll('nav.primary a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); 
-                transitionOverlay.classList.add('show');
-                setTimeout(() => {
-                    window.location.href = this.href; 
-                }, 500);
-            });
-        });
-    </script>
+        </nav>
+
+    </main>
+
+</div>
+
 </body>
 </html>

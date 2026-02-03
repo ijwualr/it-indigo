@@ -11,7 +11,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgb(143, 39, 228); /* fallback background */
+  background-color: rgb(143, 39, 228);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -52,7 +52,7 @@ nav.primary {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   padding: 1.5rem;
 
@@ -122,8 +122,6 @@ nav.primary {
 
 #content p {
   margin-left: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-               "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: darkblue;
 }
 
@@ -146,57 +144,13 @@ nav.primary {
   height: auto;
   display: block;
   margin: 0 auto 1rem;
-  border: 2px solid rgb(254, 254, 254);
+  border: 2px solid white;
   border-radius: 50px;
-}
-
-/* Transition Overlay */
-.transition-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.transition-container.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.transition-container div {
-  font-size: 4rem;
-  font-weight: bold;
-  color: rgb(250, 250, 250);
-  text-shadow: 2px 2px 4px rgba(251, 251, 251, 0.5);
-  background-color: rgba(44, 2, 47, 0.6);
-  padding: 20px 40px;
-  border-radius: 8px;
 }
 
 /* Mobile View */
 @media (max-width: 700px) {
   nav.primary {
-    grid-template-columns: 1fr; 
-  }
-
-  .semester-column {
-    gap: 0.5rem;
-  }
-
-  .semester-column h2 {
-    font-size: 1.2rem;
-  }
-
-  .semester-column ul {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
