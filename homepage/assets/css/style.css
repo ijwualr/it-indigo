@@ -47,38 +47,40 @@ header.primary h1 {
   text-align: center;
 }
 
-/* Navigation Container */
+/* Navigation Grid */
 nav.primary {
   width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  padding: 1.5rem;
+  padding: 0;
+  background: none;
+  border: none;
+  align-items: start; /* prevents equal-height stretching */
+}
 
+/* Semester Boxes */
+.semester-box {
   background-color: rgba(255, 255, 255, 0.15);
   border: 2px solid #f0f0f6;
   border-radius: 12px;
+  padding: 1.5rem;
   backdrop-filter: blur(4px);
-}
-
-/* Column wrapper */
-.semester-column {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Column labels */
-.semester-column h2 {
-  text-align: center;
+/* Headings */
+.semester-box h2,
+.semester-box h3 {
   color: white;
   text-shadow: 1px 1px 2px black;
-  font-size: 1.4rem;
 }
 
-/* Lists inside each column */
-.semester-column ul {
+/* Lists */
+.semester-box ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -86,11 +88,11 @@ nav.primary {
   gap: 0.75rem;
 }
 
-.semester-column li {
+.semester-box li {
   width: 100%;
 }
 
-.semester-column a {
+.semester-box a {
   display: block;
   padding: 0.75rem 1rem;
   text-decoration: none;
@@ -102,12 +104,12 @@ nav.primary {
   transition: background-color 0.3s ease;
 }
 
-.semester-column a:hover {
+.semester-box a:hover {
   background-color: #d477e2;
-  box-shadow: 5px 5px 5px 0px rgba(22, 32, 77, 0.75);
+  box-shadow: 5px 5px 5px rgba(22, 32, 77, 0.75);
 }
 
-/* Content */
+/* Content Area */
 #content {
   display: flex;
   flex-direction: column;
@@ -154,7 +156,8 @@ nav.primary {
     grid-template-columns: 1fr;
   }
 }
-/* Loading Screen Overlay */
+
+/* Loading Screen */
 #loading-screen {
   position: fixed;
   top: 0;
