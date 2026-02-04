@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Calculator</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/1057223.png" alt="Website Favicon">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<h1>Javascript Calculator</h1>
+
+<div class="calculator">
+    <h2>Calculator</h2>
+
+    <div class="form-row">
+        <label for="op1">Operand 1:</label>
+        <input type="text" id="op1">
+        <span class="error" id="err-op1"></span>
+    </div>
+
+    <div class="form-row">
+        <label>Operator:</label>
+        <div class="operators">
+            <label><input type="radio" name="operator" value="+"> + </label>
+            <label><input type="radio" name="operator" value="-"> - </label>
+            <label><input type="radio" name="operator" value="*"> * </label>
+            <label><input type="radio" name="operator" value="/"> / </label>
+        </div>
+        <span class="error" id="err-op"></span>
+    </div>
+
+    <div class="form-row">
+        <label for="op2">Operand 2:</label>
+        <input type="text" id="op2">
+        <span class="error" id="err-op2"></span>
+    </div>
+
+    <div class="form-row">
+        <label>Result:</label>
+        <span id="result"></span>
+    </div>
+
+    <div class="buttons">
+        <button id="calcBtn">Calculate</button>
+        <button id="clearBtn">Clear</button>
+    </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

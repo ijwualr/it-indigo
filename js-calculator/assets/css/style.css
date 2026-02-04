@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 350px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+input[type="text"] {
+    width: 150px;
+}
+
+.operators label {
+    margin-right: 10px;
+}
+
+.error {
+    color: red;
+    display: block;
+    margin-left: 100px;
+    font-size: 0.9em;
+}
+
+#result {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.buttons button {
+    margin-right: 10px;
+}
