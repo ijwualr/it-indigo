@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Positioning Lab</title>
+  <style>
+    /* ---------------Box Sizing----------------- */
+    html {
+      box-sizing: border-box;
+      height: 100%;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+  background-color: #ECECEC;
+  font-weight: bold;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: #FFF;
+  text-align: center;
+  line-height: 24px;
+  margin: 0;
+
+  /* GRID LAYOUT */
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: auto 1fr 150px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #000;
+  font-weight: normal;
+  grid-column: 1 / 4;
+  grid-row: 1;          
+  align-self: center;
+  justify-self: center;
+}
+
+
+    /* Wrapper */
+    #wrapper {
+      background-color: #FFF;
+      border: 1px solid #c0c0c0;
+      grid-column: 2;
+      grid-row: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 2px 2px #000;
+    }
+
+    /* Footer */
+    #footer {
+      background-color: #666;
+      padding: 20px 80px;
+    }
+
+    /* Corner Boxes */
+    #navy,
+    #teal,
+    #blue,
+    #aqua {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 2px 2px #000;
+    }
+
+    #navy {
+      background-color: #001f3f;
+      grid-column: 1;
+      grid-row: 1;
+      align-self: start;
+      justify-self: start;
+    }
+
+    #teal {
+      background-color: #39CCCC;
+      grid-column: 3;
+      grid-row: 1;
+      align-self: start;
+      justify-self: end;
+    }
+
+    #blue {
+      background-color: #0074D9;
+      grid-column: 1;
+      grid-row: 3;
+      align-self: end;
+      justify-self: start;
+    }
+
+    #aqua {
+      background-color: #7FDBFF;
+      grid-column: 3;
+      grid-row: 3;
+      align-self: end;
+      justify-self: end;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercise 3</h1>
+
+  <div id="navy">Navy</div>
+  <div id="teal">Teal</div>
+  <div id="blue">Blue</div>
+  <div id="aqua">Aqua</div>
+
+  <section id="wrapper">
+    <div id="footer">Footer</div>
+  </section>
+</body>
+</html>

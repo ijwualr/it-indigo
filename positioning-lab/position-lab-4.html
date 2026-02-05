@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Positioning Lab 2</title>
+  <title>Positioning Lab 4</title>
   <style type="text/css">
     /* ---------------Box Sizing----------------- */
 html {
@@ -31,47 +31,71 @@ h1 {
   padding: 40px 0;
 }
 
-/* Wrapper  */
+/* Wrapper */
 #wrapper {
   background-color: #FFF;
   border: 1px solid #c0c0c0;
   width: 800px;
+  height: 500px;
   margin: 0 auto 60px auto;
-  padding: 20px;
 
-  /* --- GRID LAYOUT --- */
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  grid-template-rows: 150px 60px;        
-  gap: 20px;                              
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: 150px 1fr 150px;
+  position: relative;
 }
 
-/* Color Blocks */
+/* Corner Boxes */
 #navy {
   background-color: #001f3f;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 #teal {
   background-color: #39CCCC;
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 #blue {
   background-color: #0074D9;
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 #aqua {
   background-color: #7FDBFF;
+  grid-column: 3;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Footer */
 #footer {
   background-color: #666;
-  grid-column: 1 / 5;   /* span all columns */
+  grid-column: 2;
+  grid-row: 2;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
   </style>
 </head>
 <body>
-  <h1>Exercise 2</h1>
+  <h1>Exercise 4</h1>
   <section id="wrapper">
     <div id="navy">Navy</div>
     <div id="teal">Teal</div>
