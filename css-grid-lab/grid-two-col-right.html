@@ -6,33 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Grid Demo</title>
   <style>
-    /*  ---------------Box Sizing-----------------  */
-    html {
-      box-sizing: border-box;
-    }
+    /* ---------------Box Sizing----------------- */
+html {
+  box-sizing: border-box;
+}
 
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-    /* Starter */
-    main>* {
-      font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
-        sans-serif;
-      font-weight: normal;
-      background-color: #c0c0c0;
-      border-radius: 10px;
-      padding: 20px;
-    }
+main > * {
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro,
+    sans-serif;
+  font-weight: normal;
+  background-color: #c0c0c0;
+  border-radius: 10px;
+  padding: 20px;
+}
 
-    main {
-      display: grid;
-      gap: 20px;
-      max-width: 80vw;
-      margin: 20px auto;
-    }
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr; 
+  grid-template-areas:
+    "header header"
+    "content aside"
+    "blog aside"
+    "footer footer";
+  gap: 20px;
+  max-width: 80vw;
+  margin: 20px auto;
+}
+
+header.primary {
+  grid-area: header;
+}
+
+#content {
+  grid-area: content;
+}
+
+#blog {
+  grid-area: blog;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer.primary {
+  grid-area: footer;
+}
+
   </style>
 
 </head>

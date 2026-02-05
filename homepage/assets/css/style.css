@@ -57,7 +57,7 @@ nav.primary {
   padding: 0;
   background: none;
   border: none;
-  align-items: start; /* prevents equal-height stretching */
+  align-items: start; 
 }
 
 /* Semester Boxes */
