@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -197,4 +198,100 @@ nav.primary {
   to {
     transform: rotate(360deg);
   }
+}
+/* Footer */
+footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-bar {
+  width: 90%;
+  max-width: 1100px;
+
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #f0f0f6;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  gap: 2rem;             
+
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Logo container */
+.footer-logos {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-logos img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(1px 1px 2px black);
+  transition: transform 0.2s ease;
+}
+
+.footer-logos img:hover {
+  transform: scale(1.15);
+}
+
+/* Back to Top Button */
+.footer-bar .back-to-top {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+
+  border: 2px solid #f0f0f6;
+  border-radius: 6px;
+
+  background-color: #511a81;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-bar .back-to-top:hover {
+  background-color: #d477e2;
+  box-shadow: 4px 4px 6px rgba(22, 32, 77, 0.75);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .footer-bar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+/* Footer Icons */
+.footer-logos {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-logos i {
+  font-size: 35px;                    
+  color: white;                       
+  text-shadow: 1px 1px 2px black;     
+  transition: transform 0.2s ease,
+              color 0.2s ease,
+              text-shadow 0.2s ease;
+}
+
+.footer-logos i:hover {
+  transform: scale(1.2);
+  color: #d477e2;                      
+  text-shadow: 2px 2px 4px #d477e2;    
 }
