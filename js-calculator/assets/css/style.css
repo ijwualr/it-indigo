@@ -5,7 +5,7 @@ body {
 
 .calculator {
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 25px;
     width: 350px;
 }
 
@@ -22,9 +22,17 @@ input[type="text"] {
     width: 150px;
 }
 
-.operators label {
-    margin-right: 10px;
+.operators {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; 
 }
+
+.operators label {
+    margin-right: 0; 
+}
+
 
 .error {
     color: red;

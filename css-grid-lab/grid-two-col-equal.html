@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Grid Demo</title>
 
   <style>
-    /* --------------- Box Sizing ----------------- */
+    /* ---------------- Global Box Sizing ---------------- */
     html {
       box-sizing: border-box;
     }
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
       box-sizing: inherit;
     }
 
-    /* Starter styling */
+    /* ---------------- Base Styling ---------------- */
     main > * {
       font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
       font-weight: normal;
@@ -27,21 +23,23 @@
       padding: 20px;
     }
 
-    /* ---------------- GRID LAYOUT ---------------- */
+    /* ---------------- Grid Layout ---------------- */
     main {
       display: grid;
-      grid-template-columns: 1fr 1fr; 
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
       max-width: 80vw;
       margin: 20px auto;
     }
 
+    /* Full‑width elements */
     header.primary,
     footer.primary,
-
     aside {
-      grid-column: 1 / -1; 
+      grid-column: 1 / -1;
+    }
 
+    /* Section layout */
     section {
       display: flex;
       flex-direction: column;
@@ -60,8 +58,8 @@
       <header>
         <h2>#Content Section Header</h2>
       </header>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus expedita repellendus aliquid iusto consectetur ut velit totam explicabo magnam. Culpa non suscipit doloribus corporis neque.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos inventore quo exercitationem temporibus magni deserunt, quasi repellendus reiciendis? Quos, facere doloribus optio quasi numquam dolore!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus expedita repellendus aliquid iusto consectetur ut velit totam explicabo magnam.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos inventore quo exercitationem temporibus magni deserunt quasi repellendus reiciendis?</p>
       <footer>Section Footer</footer>
     </section>
 
@@ -69,8 +67,8 @@
       <header>
         <h2>#Blog Section Header</h2>
       </header>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus expedita repellendus aliquid iusto consectetur ut velit totam explicabo magnam. Culpa non suscipit doloribus corporis neque.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos inventore quo exercitationem temporibus magni deserunt, quasi repellendus reiciendis? Quos, facere doloribus optio quasi numquam dolore!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus expedita repellendus aliquid iusto consectetur ut velit totam explicabo magnam.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos inventore quo exercitationem temporibus magni deserunt quasi repellendus reiciendis?</p>
       <footer>Section Footer</footer>
     </section>
 
@@ -79,8 +77,9 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia non eaque dolorum sequi velit molestiae ratione ducimus ipsum excepturi atque.</p>
     </aside>
 
-    <footer class="primary">Site Footer</footer>
+    <footer class="primary">
+      Site Footer
+    </footer>
   </main>
 </body>
-
 </html>
