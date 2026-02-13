@@ -74,7 +74,7 @@ function clearErrors() {
 function showError(id, msg) {
     const el = document.getElementById(id);
     el.textContent = msg;
-    el.style.display = "inline"; // or "block" depending on your layout
+    el.style.display = "inline"; 
 }
 
 function hideError(id) {
