@@ -1,0 +1,54 @@
+.formcontainer {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: left;
+    margin-top: 0;
+}
+
+#detail {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.formlabel {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 4px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.radiogroup {
+    display: inline-block;
+}
+
+input[type="button"] {
+    padding: 6px 12px;
+    margin-right: 10px;
+    border: 1px solid #666;
+    background: #e6e6e6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background: #dcdcdc;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+.radio-error {
+    color: red;
+    font-size: 0.9em;
+    margin-left: 120px; 
+    display: block;
+}
