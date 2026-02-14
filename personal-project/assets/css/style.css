@@ -1,0 +1,113 @@
+/* --- Global Styles --- */
+:root {
+  --primary-color: #0d6efd; /* Bootstrap Blue - Change this to match your brand */
+  --secondary-color: #6c757d;
+  --dark-bg: #212529;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+/* --- Navigation --- */
+.custom-navbar {
+  background: rgba(33, 37, 41, 0.95); /* Dark semi-transparent */
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-weight: 600;
+  margin-left: 10px;
+  position: relative;
+}
+
+/* Hover underline effect for nav links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+/* --- Hero / Banner Section --- */
+.hero-section {
+  /* Replace the URL below with your actual background image */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/css/img/West-Bauxite.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  height: 85vh; /* Takes up 85% of the viewport height */
+  margin-top: 0;
+}
+
+/* --- Layout & Sections --- */
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* --- Fade In Animation --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Utilities --- */
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 991px) {
+  .hero-section {
+    height: 60vh; /* Shorter banner on mobile */
+    background-attachment: scroll; /* Turn off parallax on mobile for performance */
+  }
+  
+  .text-center-mobile {
+    text-align: center;
+  }
+}
