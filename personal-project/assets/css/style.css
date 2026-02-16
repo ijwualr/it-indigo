@@ -159,3 +159,75 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transform: translateX(-50%) translateY(-4px);
 }
+
+@media (max-width: 767px) {
+
+  .custom-navbar {
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .nav-link {
+    margin: 8px 0;
+    display: block;
+  }
+
+  .hero-section {
+    height: 60vh;             
+    background-attachment: scroll; 
+  }
+
+  .hero-section .container {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .title-underline {
+    width: 45px;
+    height: 3px;
+  }
+
+  .container,
+  .row,
+  .col,
+  .col-md-6,
+  .col-lg-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .shadow-sm {
+    margin-bottom: 25px;
+  }
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
