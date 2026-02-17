@@ -1,6 +1,6 @@
-/* --- Global Styles --- */
+
 :root {
-  --primary-color: #0d6efd; /* Bootstrap Blue - Change this to match your brand */
+  --primary-color: #0d6efd;
   --secondary-color: #6c757d;
   --dark-bg: #212529;
 }
@@ -16,9 +16,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* --- Navigation --- */
 .custom-navbar {
-  background: rgba(33, 37, 41, 0.95); 
+  background: rgba(33, 37, 41, 0.95);
   backdrop-filter: blur(10px);
   padding: 15px 0;
   transition: all 0.3s ease;
@@ -46,20 +45,17 @@ h1, h2, h3, h4, h5, h6 {
   transition: width 0.3s;
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
-/* Banner */
 .hero-section {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; 
-  height: 85vh; 
+  background-attachment: fixed;
+  height: 85vh;
   margin-top: 0;
-}
-
-.hero-section {
   position: relative;
 }
 
@@ -67,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); 
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
@@ -75,7 +71,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 2;
 }
-
 
 .section-padding {
   padding: 80px 0;
@@ -87,9 +82,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title-underline {
-  width: 60px;
+  width: 450px;
   height: 4px;
   background-color: var(--primary-color);
+  margin: 0 auto;
   border-radius: 2px;
 }
 
@@ -109,28 +105,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shadow-sm {
-  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 991px) {
-  .hero-section {
-    height: 60vh; 
-    background-attachment: scroll; 
-  }
-  
-  .text-center-mobile {
-    text-align: center;
-  }
-}
-
-.title-underline {
-  width: 450px;        
-  height: 4px;
-  background-color: #0d6efd; 
-  margin: 0 auto;
-  border-radius: 2px;
-}
 .footer-icon {
   position: relative;
   display: inline-block;
@@ -160,74 +137,57 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%) translateY(-4px);
 }
 
+.brand-icon {
+  height: 28px;
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+
 @media (max-width: 767px) {
 
+  body {
+    text-align: center;
+  }
+
+  
   .custom-navbar {
-    padding: 10px 0;
+    text-align: left;
   }
 
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
-
-  .navbar-nav {
-    text-align: center;
-    padding-top: 10px;
-  }
-
-  .nav-link {
-    margin: 8px 0;
-    display: block;
-  }
-
-  .hero-section {
-    height: 60vh;             
-    background-attachment: scroll; 
-  }
-
-  .hero-section .container {
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  .hero-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-section p {
-    font-size: 1rem;
-  }
-
-  .section-padding {
-    padding: 50px 0;
-  }
 
   .section-title {
-    font-size: 1.8rem;
+    text-align: center !important;
+    font-size: 1.8rem !important;
   }
 
   .title-underline {
-    width: 45px;
+   width: 300px !important;   
     height: 3px;
+    margin: 0 auto !important; 
+    background-color: var(--primary-color);
   }
-
-  .container,
-  .row,
-  .col,
-  .col-md-6,
-  .col-lg-4 {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
-  }
-
-  .shadow-sm {
-    margin-bottom: 25px;
-  }
-
 
   img {
-    max-width: 100%;
-    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .row {
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  .brand-icon {
+    margin-right: 8px !important;
+    height: 26px; 
   }
 }
