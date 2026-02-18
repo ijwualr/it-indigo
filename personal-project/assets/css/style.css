@@ -4,6 +4,9 @@
   --secondary-color: #6c757d;
   --dark-bg: #212529;
 }
+html, body {
+  overflow-x: hidden;
+}
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -189,5 +192,16 @@ h1, h2, h3, h4, h5, h6 {
   .brand-icon {
     margin-right: 8px !important;
     height: 26px; 
+  }
+}
+#weather-box img {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 767px) {
+  #weather-box {
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
   }
 }
