@@ -178,7 +178,7 @@
   const apiKey = "9fa61f0e3c6df65b84068e0ae2911dff"; 
   const city = "East End,US"; 
   
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=$EastEnd,US&units=imperial&appid=$9fa61f0e3c6df65b84068e0ae2911dff`) 
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=East%20End,US&units=imperial&appid=9fa61f0e3c6df65b84068e0ae2911dff`)
   .then(response => response.json()) 
   .then(data => { 
     const temp = Math.round(data.main.temp); 
