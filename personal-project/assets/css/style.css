@@ -205,3 +205,34 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 0.5rem;
   }
 }
+
+/* --- FOOD PAGE LAYOUT --- */
+
+/* Section spacing */
+.section-padding {
+  padding: 80px 0;
+}
+
+.title-underline {
+  width: 500px;
+  height: 4px;
+  background: var(--primary-color);   
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
