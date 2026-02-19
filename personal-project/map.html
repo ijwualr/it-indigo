@@ -77,25 +77,95 @@
     </div>
   </footer>
 
-  <script>
-    function initMap() {
-        const eastEnd = { 
-            lat: 34.55075072805528, 
-            lng: -92.3411162121624 
-        };
+  <style>
+  .map-label {
+    background: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    white-space: nowrap;
+  }
+</style>
 
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 13,
-            center: eastEnd,
-        });
+<script>
+  function initMap() {
+    const eastEnd = { 
+      lat: 34.55075072805528, 
+      lng: -92.3411162121624 
+    };
 
-        new google.maps.Marker({
-            position: eastEnd,
-            map: map,
-            title: "East End, Arkansas",
-        });
-    }
-  </script>
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: eastEnd,
+    });
+
+    const icons = {
+      town:      "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
+      food:      "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+      school:    "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+      park:      "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+      shop:      "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+      church:    "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+    };
+
+    const locations = [
+      { position: eastEnd, title: "East End, Arkansas", category: "town" },
+      { position: { lat: 34.53253673459479, lng: -92.33626941714391 }, title: "East End Cafe", category: "food" },
+      { position: { lat: 34.53213844834816, lng: -92.3363258827779 }, title: "Cravings Coffee", category: "food" },
+      { position: { lat: 34.5600317639882, lng: -92.33786151718209 }, title: "Los Toritos Restaurant", category: "food" },
+      { position: { lat: 34.561501545483445, lng: -92.33622503434239 }, title: "Gran Goose Grill", category: "food" },
+      { position: { lat: 34.5602366916635, lng: -92.31315396765791 }, title: "East End Ball Park", category: "park" },
+      { position: { lat: 34.53404235325542, lng: -92.33644015208392 }, title: "Village Plaza", category: "shop" },
+      { position: { lat: 34.53261248022952, lng: -92.33718446738668 }, title: "Library", category: "shop" },
+      { position: { lat: 34.53868625713033, lng: -92.3404363729619 }, title: "Marylake Monastery", category: "church" },
+      { position: { lat: 34.552647354324904, lng: -92.33609908830668 }, title: "East End Baptist Church", category: "church" },
+      { position: { lat: 34.563665010957294, lng: -92.3227077713499 }, title: "East Union Church", category: "church" },
+      { position: { lat: 34.55607496070531, lng: -92.34166886925233 }, title: "Intermediate School", category: "school" },
+      { position: { lat: 34.52844696747502, lng: -92.33526467296235 }, title: "East End Middle School", category: "school" },
+      { position: { lat: 34.55255670245069, lng: -92.33992033202698 }, title: "Elementary School", category: "school" }
+    ];
+
+    let labelDiv = null;
+    let overlay = new google.maps.OverlayView();
+
+    overlay.onAdd = function () {
+      labelDiv = document.createElement("div");
+      labelDiv.style.position = "absolute";
+      labelDiv.style.display = "none";
+      labelDiv.className = "map-label";
+      this.getPanes().floatPane.appendChild(labelDiv);
+    };
+
+    overlay.draw = function () {};
+    overlay.setMap(map);
+
+    locations.forEach(loc => {
+      const marker = new google.maps.Marker({
+        position: loc.position,
+        map: map,
+        icon: icons[loc.category]
+      });
+
+      marker.addListener("mouseover", () => {
+        labelDiv.textContent = loc.title;
+        labelDiv.style.display = "block";
+
+        const projection = overlay.getProjection();
+        const pos = projection.fromLatLngToDivPixel(marker.getPosition());
+
+        labelDiv.style.left = pos.x + "px";
+        labelDiv.style.top = (pos.y - 30) + "px";
+      });
+
+      marker.addListener("mouseout", () => {
+        labelDiv.style.display = "none";
+      });
+    });
+  }
+</script>
+
 
   <script>
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=East%20End,US&units=imperial&appid=9fa61f0e3c6df65b84068e0ae2911dff`)
