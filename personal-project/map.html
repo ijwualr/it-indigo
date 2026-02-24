@@ -13,17 +13,13 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
+  <link rel="stylesheet" href="assets/css/style.css" />
+
   <style>
     #map {
       width: 100%;
       height: 100dvh;
       margin-top: 80px;
-    }
-
-    .brand-icon {
-      height: 30px;
-      width: auto;
-      margin-right: 10px;
     }
 
     .map-label {
@@ -82,156 +78,209 @@
       overflow-x: hidden;
     }
   </style>
+
+  <style>
+    .navbar-nav .nav-link {
+      position: relative;
+      padding-bottom: 6px;
+    }
+
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .nav-link:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #0d6efd;
+      border-radius: 2px;
+    }
+  </style>
+  <style>
+  #map-key {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;             
+    background: white;
+    padding: 14px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    font-size: 14px;
+    z-index: 9999;
+    max-width: 85vw;         
+    text-align: left;
+  }
+
+  #map-key div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  #map-key img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+</style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <div class="container">
 
-      <div id="weather-box" class="text-white small d-flex align-items-center me-3">
-        <span id="weather-temp">Loading...</span>
-        <span id="weather-icon" class="ms-1"></span>
-      </div>
+    <div id="weather-box" class="text-white small d-flex align-items-center me-3">
+      <span id="weather-temp"></span>
+      <span id="weather-icon" class="ms-1"></span>
+    </div>
 
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/img/107-1076951_arkansas-map-outline-png-shape-state-stencil-clip.png" class="brand-icon" alt="Map Icon">
-        East End, Arkansas
+    <a class="navbar-brand fade-in" href="index.html">
+      <img src="assets/img/107-1076951_arkansas-map-outline-png-shape-state-stencil-clip.png" class="brand-icon">
+      East End, Arkansas
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fade-in">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="food.html">Where to Eat</a></li>
+      </ul>
+      <a href="map.html" class="btn btn-primary ms-lg-3 fade-in shadow-sm">Explore Map</a>
+    </div>
+
+  </div>
+</nav>
+
+<div id="map"></div>
+
+<div id="map-key">
+  <h6 class="mb-2">Map Key</h6>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/orange-dot.png"> Town</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"> Food</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"> School</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"> Park</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"> Shop</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"> Church</div>
+</div>
+
+<footer class="bg-dark text-white pt-5 pb-3 mt-5">
+  <div class="container text-center">
+    <div class="mb-4">
+
+      <a href="https://www.facebook.com/groups/932245290177257/" class="footer-icon" data-label="Facebook Community Page">
+        <i class="fa-brands fa-facebook fa-lg"></i>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a href="tel:501-888-3522" class="footer-icon" data-label="Call State Representative">
+        <i class="fa-solid fa-phone fa-lg"></i>
+      </a>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="food.html">Where to Eat</a></li>
-        </ul>
-        <a href="map.html" class="btn btn-primary ms-lg-3 shadow-sm">Explore Map</a>
-      </div>
+      <a href="mailto:julie.mayberry@arkansashouse.org" class="footer-icon" data-label="Email State Representative">
+        <i class="fa-solid fa-envelope fa-lg"></i>
+      </a>
+
+      <p class="mb-0 small text-white-50">&copy; 2026 East End, Arkansas. All Rights Reserved.</p>
     </div>
-  </nav>
-
-  <div id="map"></div>
-
-  <div id="map-key">
-    <h6 class="mb-2">Map Key</h6>
-    <div><img src="http://maps.google.com/mapfiles/ms/icons/orange-dot.png"> Town</div>
-    <div><img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"> Food</div>
-    <div><img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"> School</div>
-    <div><img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"> Park</div>
-    <div><img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png"> Shop</div>
-    <div><img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"> Church</div>
   </div>
+</footer>
 
-  <footer class="bg-dark text-white pt-5 pb-3 mt-5">
-    <div class="container text-center">
-      <div class="mb-4">
-        <a href="https://www.facebook.com/groups/932245290177257/" class="footer-icon text-white me-3">
-          <i class="fa-brands fa-facebook fa-lg"></i>
-        </a>
-        <a href="tel:501-888-3522" class="footer-icon text-white me-3">
-          <i class="fa-solid fa-phone fa-lg"></i>
-        </a>
-        <a href="mailto:julie.mayberry@arkansashouse.org" class="footer-icon text-white">
-          <i class="fa-solid fa-envelope fa-lg"></i>
-        </a>
-        <p class="mb-0 small text-white-50 mt-3">&copy; 2026 East End, Arkansas. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+<script>
+  function initMap() {
+    const eastEnd = { lat: 34.55075072805528, lng: -92.3411162121624 };
 
-  <script>
-    function initMap() {
-      const eastEnd = { lat: 34.55075072805528, lng: -92.3411162121624 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: eastEnd,
+    });
 
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 14,
-        center: eastEnd,
+    const icons = {
+      town: "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
+      food: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+      school: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+      park: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+      shop: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+      church: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+    };
+
+    const locations = [
+      { position: eastEnd, title: "East End, Arkansas", category: "town" },
+      { position: { lat: 34.53253673459479, lng: -92.33626941714391 }, title: "East End Cafe", category: "food" },
+      { position: { lat: 34.53213844834816, lng: -92.3363258827779 }, title: "Cravings Coffee", category: "food" },
+      { position: { lat: 34.5600317639882, lng: -92.33786151718209 }, title: "Los Toritos Restaurant", category: "food" },
+      { position: { lat: 34.561501545483445, lng: -92.33622503434239 }, title: "Gran Goose Grill", category: "food" },
+      { position: { lat: 34.5602366916635, lng: -92.31315396765791 }, title: "East End Ball Park", category: "park" },
+      { position: { lat: 34.53404235325542, lng: -92.33644015208392 }, title: "Village Plaza", category: "shop" },
+      { position: { lat: 34.53261248022952, lng: -92.33718446738668 }, title: "Library", category: "shop" },
+      { position: { lat: 34.53868625713033, lng: -92.3404363729619 }, title: "Marylake Monastery", category: "church" },
+      { position: { lat: 34.552647354324904, lng: -92.33609908830668 }, title: "East End Baptist Church", category: "church" },
+      { position: { lat: 34.563665010957294, lng: -92.3227077713499 }, title: "East Union Church", category: "church" },
+      { position: { lat: 34.55607496070531, lng: -92.34166886925233 }, title: "Intermediate School", category: "school" },
+      { position: { lat: 34.52844696747502, lng: -92.33526467296235 }, title: "East End Middle School", category: "school" },
+      { position: { lat: 34.55255670245069, lng: -92.33992033202698 }, title: "Elementary School", category: "school" }
+    ];
+
+    let labelDiv = null;
+    let overlay = new google.maps.OverlayView();
+
+    overlay.onAdd = function () {
+      labelDiv = document.createElement("div");
+      labelDiv.style.position = "absolute";
+      labelDiv.style.display = "none";
+      labelDiv.className = "map-label";
+      this.getPanes().floatPane.appendChild(labelDiv);
+    };
+
+    overlay.draw = function () {};
+    overlay.setMap(map);
+
+    locations.forEach(loc => {
+      const marker = new google.maps.Marker({
+        position: loc.position,
+        map: map,
+        icon: icons[loc.category]
       });
 
-      const icons = {
-        town: "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
-        food: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-        school: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-        park: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-        shop: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
-        church: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
-      };
+      marker.addListener("mouseover", () => {
+        labelDiv.textContent = loc.title;
+        labelDiv.style.display = "block";
 
-      const locations = [
-        { position: eastEnd, title: "East End, Arkansas", category: "town" },
-        { position: { lat: 34.53253673459479, lng: -92.33626941714391 }, title: "East End Cafe", category: "food" },
-        { position: { lat: 34.53213844834816, lng: -92.3363258827779 }, title: "Cravings Coffee", category: "food" },
-        { position: { lat: 34.5600317639882, lng: -92.33786151718209 }, title: "Los Toritos Restaurant", category: "food" },
-        { position: { lat: 34.561501545483445, lng: -92.33622503434239 }, title: "Gran Goose Grill", category: "food" },
-        { position: { lat: 34.5602366916635, lng: -92.31315396765791 }, title: "East End Ball Park", category: "park" },
-        { position: { lat: 34.53404235325542, lng: -92.33644015208392 }, title: "Village Plaza", category: "shop" },
-        { position: { lat: 34.53261248022952, lng: -92.33718446738668 }, title: "Library", category: "shop" },
-        { position: { lat: 34.53868625713033, lng: -92.3404363729619 }, title: "Marylake Monastery", category: "church" },
-        { position: { lat: 34.552647354324904, lng: -92.33609908830668 }, title: "East End Baptist Church", category: "church" },
-        { position: { lat: 34.563665010957294, lng: -92.3227077713499 }, title: "East Union Church", category: "church" },
-        { position: { lat: 34.55607496070531, lng: -92.34166886925233 }, title: "Intermediate School", category: "school" },
-        { position: { lat: 34.52844696747502, lng: -92.33526467296235 }, title: "East End Middle School", category: "school" },
-        { position: { lat: 34.55255670245069, lng: -92.33992033202698 }, title: "Elementary School", category: "school" }
-      ];
+        const projection = overlay.getProjection();
+        const pos = projection.fromLatLngToDivPixel(marker.getPosition());
 
-      let labelDiv = null;
-      let overlay = new google.maps.OverlayView();
+        labelDiv.style.left = pos.x + "px";
+        labelDiv.style.top = (pos.y - 30) + "px";
+      });
 
-      overlay.onAdd = function () {
-        labelDiv = document.createElement("div");
-        labelDiv.style.position = "absolute";
+      marker.addListener("mouseout", () => {
         labelDiv.style.display = "none";
-        labelDiv.className = "map-label";
-        this.getPanes().floatPane.appendChild(labelDiv);
-      };
-
-      overlay.draw = function () {};
-      overlay.setMap(map);
-
-      locations.forEach(loc => {
-        const marker = new google.maps.Marker({
-          position: loc.position,
-          map: map,
-          icon: icons[loc.category]
-        });
-
-        marker.addListener("mouseover", () => {
-          labelDiv.textContent = loc.title;
-          labelDiv.style.display = "block";
-
-          const projection = overlay.getProjection();
-          const pos = projection.fromLatLngToDivPixel(marker.getPosition());
-
-          labelDiv.style.left = pos.x + "px";
-          labelDiv.style.top = (pos.y - 30) + "px";
-        });
-
-        marker.addListener("mouseout", () => {
-          labelDiv.style.display = "none";
-        });
       });
-    }
-  </script>
+    });
+  }
+</script>
 
-  <script>
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=East%20End,US&units=imperial&appid=9fa61f0e3c6df65b84068e0ae2911dff`)
-      .then(response => response.json())
-      .then(data => {
-        const temp = Math.round(data.main.temp);
-        const icon = data.weather[0].icon;
+<script>
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=East%20End,US&units=imperial&appid=9fa61f0e3c6df65b84068e0ae2911dff`)
+    .then(response => response.json())
+    .then(data => {
+      const temp = Math.round(data.main.temp);
+      const icon = data.weather[0].icon;
 
-        document.getElementById("weather-temp").textContent = `${temp}°F`;
-        document.getElementById("weather-icon").innerHTML =
-          `<img src="https://openweathermap.org/img/wn/${icon}.png" style="width:22px;height:22px;">`;
-      })
-      .catch(error => console.error('Error fetching weather:', error));
-  </script>
+      document.getElementById("weather-temp").textContent = `${temp}°F`;
+      document.getElementById("weather-icon").innerHTML =
+        `<img src="https://openweathermap.org/img/wn/${icon}.png" style="width:22px;height:22px;">`;
+    })
+    .catch(error => console.error('Error fetching weather:', error));
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuvB7KhcEX6XM3_JC7K_ltidi9zICihRU&callback=initMap" async defer></script>
+
 </body>
 </html>
