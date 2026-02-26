@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Value History</title>
+ <link rel="icon" type="image/x-icon" href="assets/img/OIP (1).webp" alt="Website Favicon">
+    <link rel="stylesheet" href="assets/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div id="cvh-container">
+        <h2>Currency Value History</h2>
+
+        <div class="form-row">
+            <label for="baseCurrency">Base Currency</label>
+            <select id="baseCurrency">
+                <option value="">Select a Currency...</option>
+                <option value="USD">US Dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="GBP">British Pound</option>
+                <option value="JPY">Japanese Yen</option>
+                <option value="CAD">Canadian Dollar</option>
+            </select>
+            <span class="error" id="baseError"></span>
+        </div>
+
+        <div class="form-row">
+            <label for="convertCurrency">Convert To Currency</label>
+            <select id="convertCurrency">
+                <option value="">Select a Currency...</option>
+                <option value="USD">US Dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="GBP">British Pound</option>
+                <option value="JPY">Japanese Yen</option>
+                <option value="CAD">Canadian Dollar</option>
+            </select>
+            <span class="error" id="convertError"></span>
+        </div>
+
+        <div class="form-row">
+            <label for="fromDate">From Date</label>
+            <input type="date" id="fromDate" pattern="\d{4}-\d{2}-\d{2}">
+            <span class="error" id="fromError"></span>
+        </div>
+
+        <div class="form-row">
+            <label for="toDate">To Date</label>
+            <input type="date" id="toDate" pattern="\d{4}-\d{2}-\d{2}">
+            <span class="error" id="toError"></span>
+        </div>
+
+        <div class="button-row">
+            <button id="showResults">Calculate</button>
+            <button id="clearForm">Clear</button>
+        </div>
+
+        <canvas id="chart"></canvas>
+    </div>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
