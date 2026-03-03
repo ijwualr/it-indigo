@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fade Carousel Demo</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/Carousel-PNG-Photos.png" alt="Website Favicon">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Fade Carousel Demo</h1>
+  </header>
+
+  <main>
+    <section class="carousel" aria-label="Image Carousel">
+      <div class="carousel-track">
+        <figure class="carousel-slide visible">
+          <img src="https://picsum.photos/1200/600?1" alt="Sample image 1">
+          <figcaption>Slide One</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="https://picsum.photos/1200/600?2" alt="Sample image 2">
+          <figcaption>Slide Two</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="https://picsum.photos/1200/600?3" alt="Sample image 3">
+          <figcaption>Slide Three</figcaption>
+        </figure>
+      </div>
+
+      <button class="carousel-btn prev" aria-label="Previous slide">❮</button>
+      <button class="carousel-btn next" aria-label="Next slide">❯</button>
+
+      <div class="carousel-dots" role="tablist"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

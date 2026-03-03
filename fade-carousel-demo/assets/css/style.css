@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #ddc5e2;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.carousel {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-track {
+  position: relative;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-slide.visible {
+  opacity: 1;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 1rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  color: white;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: 
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.65);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+  background: rgba(0,0,0,0.75);
+}
+
+.prev { left: 12px; }
+.next { right: 12px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.carousel-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #bbb;
+  cursor: pointer;
+}
+
+.carousel-dots button.active {
+  background: #333;
+}
+
+@media (max-width: 600px) {
+  figcaption {
+    font-size: 0.85rem;
+  }
+
+  .carousel-btn {
+    font-size: 1.2rem;
+    padding: 8px 10px;
+  }
+}
