@@ -311,3 +311,25 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
   }
 }
+#contact-form input,
+#contact-form textarea {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+#contact .section-title {
+  font-weight: 700;
+}
+
+#contact .title-underline {
+  width: 300px;
+  height: 4px;
+  background: var(--bs-primary);
+  border-radius: 2px;
+}
