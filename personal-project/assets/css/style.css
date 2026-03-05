@@ -324,7 +324,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
   }
 
-  /* Keep icons left, text right */
   .p-4 .d-flex {
     flex-direction: row !important;
     align-items: flex-start !important;
@@ -334,4 +333,37 @@ h1, h2, h3, h4, h5, h6 {
   .p-4 .d-flex div {
     text-align: left !important;
   }
+}
+.food-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.food-link:hover {
+  background: rgba(13, 110, 253, 0.08); /* subtle primary tint */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.food-link:hover h6 {
+  color: #0d6efd; 
+}
+
+.hover-effect {
+  transition: all 0.25s ease;
+  border-radius: 12px;
+}
+
+.hover-effect:hover {
+  background: rgba(13, 110, 253, 0.08); 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.hover-effect:hover h6 {
+  color: #0d6efd; 
 }
