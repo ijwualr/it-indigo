@@ -225,10 +225,8 @@
       { position: { lat: 34.55255670245069, lng: -92.33992033202698 }, title: "Elementary School", category: "school" }
     ];
 
-    // Reliable mobile detection (works in IG/FB)
     const isMobile = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-    // Desktop overlay label
     let labelDiv = null;
     let overlay = new google.maps.OverlayView();
 
@@ -243,21 +241,25 @@
     overlay.draw = function () {};
     overlay.setMap(map);
 
+    const infoWindow = new google.maps.InfoWindow();
+
     // Create markers
     locations.forEach(loc => {
       const marker = new google.maps.Marker({
         position: loc.position,
         map: map,
         icon: icons[loc.category],
-        label: isMobile ? {
-          text: loc.title,
-          color: "#000",
-          fontSize: "12px",
-          fontWeight: "600"
-        } : null
+        label: null 
       });
 
-      // Desktop hover labels only
+      if (isMobile) {
+        marker.addListener("click", () => {
+          infoWindow.setContent(`<div class="mobile-label">${loc.title}</div>`);
+          infoWindow.open(map, marker);
+        });
+      }
+
+      // DESKTOP: hover labels
       if (!isMobile) {
         marker.addListener("mouseover", () => {
           labelDiv.textContent = loc.title;
