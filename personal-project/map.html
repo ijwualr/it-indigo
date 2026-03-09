@@ -225,6 +225,10 @@
       { position: { lat: 34.55255670245069, lng: -92.33992033202698 }, title: "Elementary School", category: "school" }
     ];
 
+    // Reliable mobile detection (works in IG/FB)
+    const isMobile = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+
+    // Desktop overlay label
     let labelDiv = null;
     let overlay = new google.maps.OverlayView();
 
@@ -239,30 +243,41 @@
     overlay.draw = function () {};
     overlay.setMap(map);
 
+    // Create markers
     locations.forEach(loc => {
       const marker = new google.maps.Marker({
         position: loc.position,
         map: map,
-        icon: icons[loc.category]
+        icon: icons[loc.category],
+        label: isMobile ? {
+          text: loc.title,
+          color: "#000",
+          fontSize: "12px",
+          fontWeight: "600"
+        } : null
       });
 
-      marker.addListener("mouseover", () => {
-        labelDiv.textContent = loc.title;
-        labelDiv.style.display = "block";
+      // Desktop hover labels only
+      if (!isMobile) {
+        marker.addListener("mouseover", () => {
+          labelDiv.textContent = loc.title;
+          labelDiv.style.display = "block";
 
-        const projection = overlay.getProjection();
-        const pos = projection.fromLatLngToDivPixel(marker.getPosition());
+          const projection = overlay.getProjection();
+          const pos = projection.fromLatLngToDivPixel(marker.getPosition());
 
-        labelDiv.style.left = pos.x + "px";
-        labelDiv.style.top = (pos.y - 30) + "px";
-      });
+          labelDiv.style.left = pos.x + "px";
+          labelDiv.style.top = (pos.y - 30) + "px";
+        });
 
-      marker.addListener("mouseout", () => {
-        labelDiv.style.display = "none";
-      });
+        marker.addListener("mouseout", () => {
+          labelDiv.style.display = "none";
+        });
+      }
     });
   }
 </script>
+
 
 <script>
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=East%20End,US&units=imperial&appid=9fa61f0e3c6df65b84068e0ae2911dff`)
