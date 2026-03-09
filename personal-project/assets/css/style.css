@@ -337,6 +337,13 @@ h1, h2, h3, h4, h5, h6 {
 #map {
   margin-bottom: -50px; 
 }
+.mobile-label {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 10px;
+  color: #000;
+}
+
 
 @media (max-width: 767px) {
   #map-key {
@@ -344,3 +351,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 767px) {
+  .nav-link::after,
+  .nav-link.active::after,
+  .nav-link:focus::after,
+  .nav-link:hover::after {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+  }
+}
