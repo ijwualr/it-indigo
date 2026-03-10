@@ -363,3 +363,98 @@ h1, h2, h3, h4, h5, h6 {
     border: none !important;
   }
 }
+
+/* Food Truck Section Layout */
+.foodtruck-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .foodtruck-wrapper {
+    flex-direction: row;
+  }
+
+  .foodtruck-links {
+    flex: 1;
+  }
+
+  .foodtruck-carousel {
+    flex: 1;
+  }
+}
+
+.foodtruck-carousel {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-img-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  text-align: left;
+}
+
+.carousel-label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0d6efd; 
+  text-align: center;
+  width: 100%;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(13, 110, 253, 0.75); 
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 20px;
+  transition: background 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(13, 110, 253, 1); 
+}
+
+

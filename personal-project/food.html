@@ -165,48 +165,85 @@
           </section>
         </div>
 
-        <!-- FULL-WIDTH FOOD TRUCK SECTION -->
-        <div class="col-12">
-          <section class="fade-in mb-5">
-            <h3 class="fw-bold text-dark mb-3">
-              <i class="fa-solid fa-truck text-primary me-2"></i>
-              Food Truck Vendors
-            </h3>
+       <!--FOOD TRUCK SECTION -->
+<div class="col-12">
+  <section class="fade-in mb-5">
+    <h3 class="fw-bold text-dark mb-3">
+      <i class="fa-solid fa-truck text-primary me-2"></i>
+      Food Truck Vendors
+    </h3>
 
-            <div class="p-4 bg-light rounded-4 shadow-sm">
+    <div class="foodtruck-wrapper p-4 bg-light rounded-4 shadow-sm">
 
-              <a href="https://maps.google.com/?q=Dorey's+Fish+East+End+AR" class="food-link">
-                <div class="d-flex align-items-start mb-3">
-                  <i class="fa-solid fa-fish text-primary fa-lg me-3"></i>
-                  <div>
-                    <h6 class="fw-bold mb-0">Dorey’s Fish & Catering</h6>
-                    <small class="text-muted">Open Thu–Fri • 11 AM – 7 PM<br>Fresh fried fish plates and Southern sides.</small>
-                  </div>
-                </div>
-              </a>
+      <!--LINKS -->
+      <div class="foodtruck-links">
 
-              <a href="https://maps.google.com/?q=Hibachi+Box+East+End+AR" class="food-link">
-                <div class="d-flex align-items-start mb-3">
-                  <i class="fa-solid fa-bowl-rice text-primary fa-lg me-3"></i>
-                  <div>
-                    <h6 class="fw-bold mb-0">Hibachi Box</h6>
-                    <small class="text-muted">Open Mon–Fri • 11 AM – 7 PM<br>Japanese‑style hibachi bowls cooked fresh to order.</small>
-                  </div>
-                </div>
-              </a>
-
-              <a href="https://maps.google.com/?q=Tacos+El+Barrio+East+End+AR" class="food-link">
-                <div class="d-flex align-items-start mb-3">
-                  <i class="fa-solid fa-pepper-hot text-primary fa-lg me-3"></i>
-                  <div>
-                    <h6 class="fw-bold mb-0">Tacos El Barrio</h6>
-                    <small class="text-muted">Open Mon–Fri • 10 AM – 6 PM<br>Authentic street tacos, burritos, and fresh salsas.</small>
-                  </div>
-                </div>
-              </a>
+        <a href="https://maps.google.com/?q=Dorey's+Fish+East+End+AR" class="food-link">
+          <div class="d-flex align-items-start mb-3">
+            <i class="fa-solid fa-fish text-primary fa-lg me-3"></i>
+            <div>
+              <h6 class="fw-bold mb-0">Dorey’s Fish & Catering</h6>
+              <small class="text-muted">Open Thu–Fri • 11 AM – 7 PM<br>Fresh fried fish plates and Southern sides.</small>
             </div>
-          </section>
-        </div>
+          </div>
+        </a>
+
+        <a href="https://maps.google.com/?q=Hibachi+Box+East+End+AR" class="food-link">
+          <div class="d-flex align-items-start mb-3">
+            <i class="fa-solid fa-bowl-rice text-primary fa-lg me-3"></i>
+            <div>
+              <h6 class="fw-bold mb-0">Hibachi Box</h6>
+              <small class="text-muted">Open Mon–Fri • 11 AM – 7 PM<br>Japanese‑style hibachi bowls cooked fresh to order.</small>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://maps.google.com/?q=Tacos+El+Barrio+East+End+AR" class="food-link">
+          <div class="d-flex align-items-start mb-3">
+            <i class="fa-solid fa-pepper-hot text-primary fa-lg me-3"></i>
+            <div>
+              <h6 class="fw-bold mb-0">Tacos El Barrio</h6>
+              <small class="text-muted">Open Mon–Fri • 10 AM – 6 PM<br>Authentic street tacos, burritos, and fresh salsas.</small>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- IMAGE CAROUSEL -->
+      <div class="foodtruck-carousel">
+
+       <div class="carousel-image fade active">
+  <div class="carousel-img-wrapper">
+    <img src="assets/img/Doreys.png" alt="Food Truck 1">
+  </div>
+  <p class="carousel-label">Dorey’s Fish & Catering</p>
+</div>
+
+<div class="carousel-image fade">
+  <div class="carousel-img-wrapper">
+    <img src="assets/img/Hibachi-Box-Cover-Photo-Food-Truck.webp" alt="Food Truck 2">
+  </div>
+  <p class="carousel-label">Hibachi Box</p>
+</div>
+
+<div class="carousel-image fade">
+  <div class="carousel-img-wrapper">
+    <img src="assets/img/Tacos 2.png" alt="Food Truck 3">
+  </div>
+  <p class="carousel-label">Tacos El Barrio</p>
+</div>
+
+        <!-- Button Controls -->
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+
+      </div>
+
+    </div>
+  </section>
+</div>
+
 
       </div>
     </div>
@@ -246,6 +283,34 @@
       })
       .catch(error => console.error('Error fetching weather:', error));
   </script>
+<script>
+  const slides = document.querySelectorAll('.foodtruck-carousel .carousel-image');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  // Auto-rotate every 4 seconds
+  setInterval(nextSlide, 4000);
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
