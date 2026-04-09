@@ -39,6 +39,19 @@
             font-size: 1.05rem;
         }
 
+        /* --- Added Weather Styling --- */
+        .weather-inline { 
+            margin-top: 10px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        
+        .weather-inline img { 
+            width: 40px; 
+            height: 40px; 
+        }
+
         .null {
             color: #b00;
             font-weight: bold;
@@ -71,9 +84,11 @@
             font-size: 1.1rem;
         }
 
-        #riverChart {
+        /* --- FIX: The new dedicated chart wrapper --- */
+        .chart-wrapper {
+            position: relative;
+            height: 350px; /* Forces the graph to be this tall */
             width: 100%;
-            max-height: 320px;
         }
 
         @media (max-width: 800px) {
@@ -96,7 +111,9 @@
 
     <div id="graphPanel">
         <h2 id="graphTitle">Select a site to view its 7‑day graph</h2>
-        <canvas id="riverChart"></canvas>
+        <div class="chart-wrapper">
+            <canvas id="riverChart"></canvas>
+        </div>
     </div>
 </div>
 
