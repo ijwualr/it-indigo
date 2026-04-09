@@ -1,0 +1,197 @@
+/* =========================================
+   COLOR VARIABLES
+========================================= */
+:root {
+  --bro-header-bg: #FFF5E4;
+  --bro-header-text: #222222;
+  --bro-hover: #4a6fa5;
+
+  --bro-footer-bg: #4F622A;
+  --bro-footer-text: #ffffff;
+  --bro-footer-link: #9ecbff;
+}
+
+/* =========================================
+   RESET + GLOBAL
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--bro-header-text);
+  display: flex;
+  flex-direction: column;
+}
+
+main.bro-main {
+  flex: 1;
+  padding-top: 100px; /* desktop spacing */
+}
+
+/* =========================================
+   NAVBAR (DESKTOP)
+========================================= */
+.bro-navbar {
+  background: var(--bro-header-bg);
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0; /* gives logo breathing room */
+}
+
+.bro-logo-img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 20px;
+  color: var(--bro-header-text) !important;
+}
+
+.nav-link:hover {
+  color: var(--bro-hover) !important;
+}
+
+/* Lower nav links slightly on desktop */
+.navbar-nav {
+  margin-top: 100px;
+}
+
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+@media (max-width: 991px) {
+
+  /* Make navbar fixed only on mobile */
+  .bro-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 12px 0;
+  }
+
+  /* Bigger, readable mobile logo */
+  .bro-logo-img {
+    height: 95px;
+    width: auto;
+  }
+
+  /* Push content down so navbar doesn't overlap */
+  main.bro-main {
+    padding-top: 150px;
+  }
+
+  /* Mobile dropdown menu styling */
+  .navbar-collapse {
+    background: var(--bro-header-bg);
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  /* Mobile nav links */
+  .nav-link {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 12px 0;
+    margin: 0;
+    border-left: 4px solid transparent;
+  }
+
+  .nav-link:hover {
+    border-left-color: var(--bro-hover);
+  }
+
+  /* Lower links slightly inside mobile menu */
+  .navbar-nav {
+    margin-top: 10px;
+  }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.bro-footer {
+  background: var(--bro-footer-bg);
+  color: var(--bro-footer-text);
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.bro-footer-logo-img {
+  height: 150px;
+  width: auto;
+}
+
+.bro-footer-contact p {
+  margin-bottom: 6px;
+}
+
+.bro-footer-contact a {
+  color: var(--bro-footer-link);
+  text-decoration: none;
+}
+
+.bro-footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* DESKTOP — navbar not fixed */
+@media (min-width: 992px) {
+  main.bro-main {
+    padding-top: 0; 
+  }
+}
+
+/* MOBILE — navbar IS fixed */
+@media (max-width: 991px) {
+  main.bro-main {
+    padding-top: 160px; 
+  }
+}
+/* --- FOOTER STYLES --- */
+.bro-footer {
+  background-color: #556b3a; /* Matches the olive green */
+  color: #ffffff;
+}
+
+.bro-footer p {
+  color: #ffffff;
+}
+
+/* Link Styles */
+.bro-footer .footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.bro-footer .footer-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Logo Sizing */
+.bro-footer-logo-img {
+  max-width: 140px;
+  height: auto;
+}
+
+/* Divider Line */
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  opacity: 1; /* Overrides default bootstrap hr opacity */
+}
