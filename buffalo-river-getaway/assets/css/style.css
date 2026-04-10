@@ -26,6 +26,7 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
+  background: #FFF5E4;
   color: var(--bro-header-text);
   display: flex;
   flex-direction: column;
@@ -33,7 +34,7 @@ body {
 
 main.bro-main {
   flex: 1;
-  padding-top: 100px; /* desktop spacing */
+  padding-top: 100px;
 }
 
 /* =========================================
@@ -42,7 +43,7 @@ main.bro-main {
 .bro-navbar {
   background: var(--bro-header-bg);
   border-bottom: 1px solid #ddd;
-  padding: 20px 0; /* gives logo breathing room */
+  padding: 20px 0;
 }
 
 .bro-logo-img {
@@ -62,17 +63,15 @@ main.bro-main {
   color: var(--bro-hover) !important;
 }
 
-/* Lower nav links slightly on desktop */
+/* Remove broken desktop offset */
 .navbar-nav {
-  margin-top: 100px;
+  margin-top: 0;
 }
 
 /* =========================================
    MOBILE NAVBAR
 ========================================= */
 @media (max-width: 991px) {
-
-  /* Make navbar fixed only on mobile */
   .bro-navbar {
     position: fixed;
     top: 0;
@@ -82,18 +81,17 @@ main.bro-main {
     padding: 12px 0;
   }
 
-  /* Bigger, readable mobile logo */
   .bro-logo-img {
     height: 95px;
-    width: auto;
   }
 
-  /* Push content down so navbar doesn't overlap */
-  main.bro-main {
-    padding-top: 150px;
+  @media (max-width: 991px) {
+  main.bro-main-river {
+    padding-top: 120px; /* perfect for your mobile navbar height */
   }
+}
 
-  /* Mobile dropdown menu styling */
+
   .navbar-collapse {
     background: var(--bro-header-bg);
     padding: 20px 15px;
@@ -101,10 +99,8 @@ main.bro-main {
     margin-top: 10px;
   }
 
-  /* Mobile nav links */
   .nav-link {
     font-size: 1.3rem;
-    font-weight: 600;
     padding: 12px 0;
     margin: 0;
     border-left: 4px solid transparent;
@@ -113,85 +109,213 @@ main.bro-main {
   .nav-link:hover {
     border-left-color: var(--bro-hover);
   }
-
-  /* Lower links slightly inside mobile menu */
-  .navbar-nav {
-    margin-top: 10px;
-  }
 }
 
 /* =========================================
    FOOTER
 ========================================= */
 .bro-footer {
-  background: var(--bro-footer-bg);
-  color: var(--bro-footer-text);
+  background-color: #556b3a;
+  color: #ffffff;
   padding: 40px 0;
   margin-top: 40px;
 }
 
 .bro-footer-logo-img {
-  height: 150px;
-  width: auto;
+  max-width: 140px;
+  height: auto;
 }
 
-.bro-footer-contact p {
-  margin-bottom: 6px;
-}
-
-.bro-footer-contact a {
-  color: var(--bro-footer-link);
-  text-decoration: none;
-}
-
-.bro-footer-contact a:hover {
-  text-decoration: underline;
-}
-
-/* DESKTOP — navbar not fixed */
-@media (min-width: 992px) {
-  main.bro-main {
-    padding-top: 0; 
-  }
-}
-
-/* MOBILE — navbar IS fixed */
-@media (max-width: 991px) {
-  main.bro-main {
-    padding-top: 160px; 
-  }
-}
-/* --- FOOTER STYLES --- */
-.bro-footer {
-  background-color: #556b3a; /* Matches the olive green */
-  color: #ffffff;
-}
-
-.bro-footer p {
-  color: #ffffff;
-}
-
-/* Link Styles */
-.bro-footer .footer-link {
+.footer-link {
   color: #ffffff;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
-.bro-footer .footer-link:hover {
+.footer-link:hover {
   text-decoration: underline;
   opacity: 0.8;
 }
 
-/* Logo Sizing */
-.bro-footer-logo-img {
-  max-width: 140px;
-  height: auto;
-}
-
-/* Divider Line */
 .footer-divider {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
-  opacity: 1; /* Overrides default bootstrap hr opacity */
+  opacity: 1;
+}
+
+/* =========================================
+   RIVER LEVELS — CARDS + WEATHER + GRAPH
+========================================= */
+.reading {
+  background: #ffffff;
+  border: 2px solid #4F622A;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.reading h3 {
+  color: #4F622A;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.reading strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.weather-inline {
+  background: #34629D;
+  border: 1px solid #34629D;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-inline img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(1.2);
+}
+
+.weather-inline span {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#graphPanel {
+  background: #ffffff;
+  border: 2px solid #4F622A;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+#graphTitle {
+  color: #4F622A;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.chart-wrapper {
+  height: 350px;
+  width: 100%;
+}
+
+.chartjs-render-monitor {
+  color: #4a6fa5;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+button.show-graph {
+  background-color: #4F622A !important;
+  border-color: #4F622A !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+button.show-graph:hover {
+  background-color: #3d4f22 !important;
+  border-color: #3d4f22 !important;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.river-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/DSC08193.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.river-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.river-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.river-hero-content h1 {
+  color: #FFF5E4;
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+#layout {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+  gap: 24px;
+}
+
+@media (max-width: 991px) {
+  #layout {
+    grid-template-columns: 1fr;
+  }
+
+  .river-hero {
+    height: 250px;
+  }
+
+  .river-hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 992px) {
+  .bro-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+   main.bro-main {
+    padding-top: 200px; 
+  }
+
+  main.bro-main-river {
+    padding-top: 200px; 
+  }
+
+}
+main.bro-main-river {
+  background: linear-gradient(
+    to bottom,
+    rgba(52, 98, 157, 0.65),
+    #FFF5E4
+  );
+}
+@media (min-width: 992px) {
+  .navbar-nav {
+    margin-top: 80px; 
+  }
 }

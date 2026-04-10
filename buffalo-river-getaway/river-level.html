@@ -2,16 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Buffalo River Getaway</title>
+  <title>River Levels – Buffalo River Getaway</title>
 
   <link rel="icon" type="image/x-icon" href="assets/img/Screenshot 2026-04-09 173352-modified (2).png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* PAGE-SPECIFIC STYLES (keeps your theme intact) */
+
+    #layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+      gap: 24px;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .reading {
+      background: #ffffff;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .reading h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .weather-inline {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .weather-inline img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .null {
+      color: #b00;
+      font-weight: bold;
+    }
+
+    button.show-graph {
+      margin-top: 8px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #1f6feb;
+      background: #1f6feb;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    button.show-graph:hover {
+      background: #174fb3;
+    }
+
+    #graphPanel {
+      background: #ffffff;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      padding: 14px 16px;
+    }
+
+    #graphTitle {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 350px;
+      width: 100%;
+    }
+
+    @media (max-width: 991px) {
+      #layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg bro-navbar fixed-top">
   <div class="container">
 
@@ -29,7 +115,7 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link" href="cabin-rental.html">Cabins</a></li>
         <li class="nav-item"><a class="nav-link" href="canoe-rental.html">Canoes</a></li>
-        <li class="nav-item"><a class="nav-link" href="river-level.html">River Levels</a></li>
+        <li class="nav-item"><a class="nav-link active" href="river-level.html">River Levels</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -37,19 +123,47 @@
   </div>
 </nav>
 
-<main class="bro-main">
-  <div class="container py-5">
-    <h1 class="text-center">Welcome to Buffalo River Getaway</h1>
-    <p class="text-center">Your content goes here.</p>
+<!-- MAIN CONTENT -->
+<main class="bro-main-river">
+
+  <!-- HERO SECTION -->
+<section class="river-hero">
+  <div class="river-hero-overlay"></div>
+  <div class="river-hero-content">
+    <h1>River Levels</h1>
+  </div>
+</section>
+
+  <div class="container py-4">
+
+
+    <div id="layout">
+
+      <!-- LEFT COLUMN: Latest Readings -->
+      <div id="riverData"></div>
+
+      <!-- RIGHT COLUMN: Graph -->
+      <div id="graphPanel">
+        <h2 id="graphTitle">Select a site to view the 7‑day graph</h2>
+        <div class="chart-wrapper">
+          <canvas id="riverChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </main>
 
+
+
+<!-- FOOTER -->
 <footer class="bro-footer py-5">
   <div class="container">
-    
+
     <div class="row align-items-center mb-4 text-center text-lg-start">
-      
-      <div class="col-lg-4 mb-4 mb-lg-0 text-lg-start">
+
+      <div class="col-lg-4 mb-4 mb-lg-0">
         <img src="assets/img/Screenshot 2026-04-09 173352-modified (2).png"
              alt="Buffalo River Getaway Logo"
              class="bro-footer-logo-img">
@@ -58,7 +172,7 @@
       <div class="col-lg-4 mb-4 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start fs-5">
         <a href="cabin-rental.html" class="footer-link mb-2">Cabin Rental</a>
         <a href="canoe-rental.html" class="footer-link mb-2">Canoe Rental</a>
-        <a href="index.html" class="footer-link mb-2">River Levels</a>
+        <a href="river-level.html" class="footer-link mb-2">River Levels</a>
         <a href="contact.html" class="footer-link">Contact</a>
       </div>
 
@@ -77,7 +191,7 @@
         <a href="#" class="footer-link">Privacy Policy</a>
       </div>
       <div class="col-md-6 text-center text-md-end">
-        <p class="mb-0"> © Buffalo River Getaway 2026. All rights reserved.</p>
+        <p class="mb-0">© Buffalo River Getaway 2026. All rights reserved.</p>
       </div>
     </div>
 
@@ -85,5 +199,9 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- YOUR RIVER JS -->
+<script src="assets/js/app.js"></script>
+
 </body>
 </html>
