@@ -34,9 +34,46 @@ body {
 
 main.bro-main {
   flex: 1;
-  padding-top: 100px;
+  padding-top: 200px; /* desktop default */
 }
 
+main.bro-main-river {
+  flex: 1;
+  padding-top: 200px; /* desktop default */
+  background: linear-gradient(
+    to bottom,
+    rgba(52, 98, 157, 0.65),
+    #FFF5E4
+  );
+}
+
+main.bro-main-contact {
+  flex: 1;
+  padding-top: 200px; /* desktop default */
+  background: linear-gradient(
+    to bottom,
+    #4F622A,
+    #FFF5E4
+  );
+}
+main.bro-main-cabin {
+  flex: 1;
+  padding-top: 200px; /* desktop default */
+  background: linear-gradient(
+    to bottom,
+    #D19A27
+    #FFF5E4
+  );
+}
+main.bro-main-canoe {
+  flex: 1;
+  padding-top: 200px; /* desktop default */
+  background: linear-gradient(
+    to bottom,
+    #D19A27
+    #FFF5E4
+  );
+}
 /* =========================================
    NAVBAR (DESKTOP)
 ========================================= */
@@ -44,6 +81,11 @@ main.bro-main {
   background: var(--bro-header-bg);
   border-bottom: 1px solid #ddd;
   padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
 
 .bro-logo-img {
@@ -63,21 +105,16 @@ main.bro-main {
   color: var(--bro-hover) !important;
 }
 
-/* Remove broken desktop offset */
 .navbar-nav {
-  margin-top: 0;
+  margin-top: 80px;
 }
 
 /* =========================================
    MOBILE NAVBAR
 ========================================= */
 @media (max-width: 991px) {
+
   .bro-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
     padding: 12px 0;
   }
 
@@ -85,12 +122,14 @@ main.bro-main {
     height: 95px;
   }
 
-  @media (max-width: 991px) {
-  main.bro-main-river {
-    padding-top: 120px; /* perfect for your mobile navbar height */
+  /* Correct mobile spacing */
+  main.bro-main,
+  main.bro-main-river,
+  main.bro-main-contact,
+  main.bro-main-cabin,
+  main.bro-main-canoe {
+    padding-top: 120px;
   }
-}
-
 
   .navbar-collapse {
     background: var(--bro-header-bg);
@@ -108,6 +147,11 @@ main.bro-main {
 
   .nav-link:hover {
     border-left-color: var(--bro-hover);
+  }
+
+  /* Footer center on mobile */
+  .col-lg-4.text-center {
+    text-align: center !important;
   }
 }
 
@@ -141,6 +185,13 @@ main.bro-main {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   opacity: 1;
+}
+
+/* Desktop footer alignment */
+@media (min-width: 992px) {
+  .col-lg-4.text-center {
+    text-align: right !important;
+  }
 }
 
 /* =========================================
@@ -209,10 +260,6 @@ main.bro-main {
   width: 100%;
 }
 
-.chartjs-render-monitor {
-  color: #4a6fa5;
-}
-
 /* =========================================
    BUTTONS
 ========================================= */
@@ -232,7 +279,7 @@ button.show-graph:hover {
 }
 
 /* =========================================
-   HERO SECTION
+   RIVER HERO SECTION
 ========================================= */
 .river-hero {
   position: relative;
@@ -259,15 +306,162 @@ button.show-graph:hover {
 }
 
 .river-hero-content h1 {
-  color: #FFF5E4;
-  font-size: 3.2rem;
-  font-weight: 700;
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
   text-shadow: 0 3px 8px rgba(0,0,0,0.4);
 }
 
+@media (max-width: 991px) {
+  .river-hero {
+    height: 250px;
+  }
+
+  .river-hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
 
 /* =========================================
-   RESPONSIVE
+   CONTACT HERO SECTION 
+========================================= */
+
+.contact-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/DSC02228.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.contact-hero-content h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 991px) {
+  .contact-hero {
+    height: 250px;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+/* =========================================
+   CABIN HERO SECTION 
+========================================= */
+
+.cabin-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/bear-ridge-3-Picsart-AiImageEnhancer.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabin-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.cabin-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.cabin-hero-content h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 991px) {
+  .cabin-hero {
+    height: 250px;
+  }
+
+  .cabin-hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* =========================================
+   CANOE HERO SECTION 
+========================================= */
+
+.canoe-hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-image: url("../img/DSC05830\ \(1\).jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canoe-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.canoe-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.canoe-hero-content h1 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 991px) {
+  .canoe-hero {
+    height: 250px;
+  }
+
+  .canoe-hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE LAYOUT
 ========================================= */
 #layout {
   margin-top: 20px;
@@ -280,42 +474,16 @@ button.show-graph:hover {
   #layout {
     grid-template-columns: 1fr;
   }
-
-  .river-hero {
-    height: 250px;
-  }
-
-  .river-hero-content h1 {
-    font-size: 2.4rem;
-  }
 }
-@media (min-width: 992px) {
-  .bro-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-  }
 
-   main.bro-main {
-    padding-top: 200px; 
-  }
-
-  main.bro-main-river {
-    padding-top: 200px; 
-  }
-
+/* Custom button color */
+.custom-btn {
+  background-color: #4F622A;
+  border-color: #4F622A;
+  color: #fff;
 }
-main.bro-main-river {
-  background: linear-gradient(
-    to bottom,
-    rgba(52, 98, 157, 0.65),
-    #FFF5E4
-  );
-}
-@media (min-width: 992px) {
-  .navbar-nav {
-    margin-top: 80px; 
-  }
+
+.custom-btn:hover {
+  background-color: #3d4c20;
+  border-color: #3d4c20;
 }
