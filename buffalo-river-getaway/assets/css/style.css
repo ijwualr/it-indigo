@@ -61,7 +61,7 @@ main.bro-main-cabin {
   padding-top: 200px; /* desktop default */
   background: linear-gradient(
     to bottom,
-    #D19A27
+    #D19A27,
     #FFF5E4
   );
 }
@@ -70,7 +70,7 @@ main.bro-main-canoe {
   padding-top: 200px; /* desktop default */
   background: linear-gradient(
     to bottom,
-    #D19A27
+    #D19A27,
     #FFF5E4
   );
 }
@@ -486,4 +486,145 @@ button.show-graph:hover {
 .custom-btn:hover {
   background-color: #3d4c20;
   border-color: #3d4c20;
+}
+
+/* Slick slider controls styled for your site */
+.slick-autoplay-toggle-button,
+.slick-prev .slick-prev-icon,
+.slick-next .slick-next-icon,
+.slick-dots li button .slick-dot-icon,
+.slick-dots li.slick-active button .slick-dot-icon {
+    color: var(--bro-header-text);
+}
+
+.slick-next:focus .slick-next-icon,
+.slick-next:focus .slick-prev-icon,
+.slick-prev:focus .slick-next-icon,
+.slick-prev:focus .slick-prev-icon,
+.slick-dots li button:focus .slick-dot-icon:before,
+.slick-dots li.slick-active button:focus .slick-dot-icon,
+.slick-autoplay-toggle-button:focus {
+    color: var(--bro-hover);
+}
+
+#cabin-rental.container {
+  max-width: 800px;   
+  margin: 40px auto;
+  padding: 40px;      
+  background-color: #fafafa;
+  border-radius: 20px;
+}
+
+
+.cabin-slideshow {
+  grid-area: slideshow;
+}
+
+.cabin-slideshow img {
+  width: 100%;
+  object-fit: cover;
+}
+#bear-ridge-cabin { grid-area: cabin; }
+#pricing { grid-area: pricing; }
+#cabin-amenities { grid-area: amenities; }
+
+#bear-ridge-cabin h2,
+#pricing h2,
+#cabin-amenities h2 {
+  margin-top: 0;
+  color: #34629D;
+}
+
+#pricing ul,
+#cabin-amenities ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+#reserve-form {
+  grid-area: form;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: #fafafa;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#reserve-form p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #34629D;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#reserve-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+#reserve-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d8cbb8;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+#reserve-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #34629D;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#reserve-form button:hover {
+  background-color: #D19A27;
+}
+
+#reserve-form .form-note {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+@media (max-width: 991px) {
+
+  /* Make the article box fit mobile screens */
+  #cabin-rental.container {
+    max-width: 95%;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  /* Collapse the grid into a single column */
+  #cabin-rental {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "slideshow"
+      "cabin"
+      "pricing"
+      "amenities"
+      "form";
+    gap: 20px;
+  }
+
+  /* Make slideshow images scale properly */
+  .cabin-slideshow img {
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Form spacing on mobile */
+  #reserve-form {
+    padding: 20px;
+  }
 }
