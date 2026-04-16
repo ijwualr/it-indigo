@@ -628,3 +628,21 @@ button.show-graph:hover {
     padding: 20px;
   }
 }
+.footer-mountain {
+  width: 100%;
+  height: 140px;
+  background: url("../img/mountain-ridge.svg") no-repeat center bottom;
+  background-size: cover;
+  position: absolute;
+  top: -100px;
+  left: 0;
+}
+.bro-footer {
+  position: relative;
+  overflow: visible;
+}
+.bro-footer {
+  position: relative;
+  overflow: visible;
+  padding-top: 160px; 
+}
