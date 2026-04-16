@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/x-icon" href="assets/img/Screenshot 2026-04-09 173352-modified (2).png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -13,7 +14,10 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg bro-navbar fixed-top">
+<!-- ============================
+     NAVBAR
+============================= -->
+<nav class="navbar navbar-expand-lg bro-navbar">
   <div class="container">
 
     <a class="navbar-brand bro-logo" href="index.html">
@@ -34,21 +38,158 @@
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
 
-<main class="bro-main">
-  <div class="container py-5">
-    <h1 class="text-center">Welcome to Buffalo River Getaway</h1>
-    <p class="text-center">Your content goes here.</p>
+<!-- ============================
+     HERO SLIDER
+============================= -->
+<section class="hero-slider">
+  <div class="hero-slides">
+
+    <div class="hero-slide">
+      <img src="assets/img/DSC03169.jpg" alt="Lake Ouachita scenic view">
+      <div class="hero-overlay container">
+        <h2>Welcome</h2>
+        <p>Welcome to Buffalo River Getaway, where cozy cabin stays and river adventures meet in the scenic wilderness of the Buffalo River.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="assets/img/DSC03799.jpg" alt="Trail and forest view">
+      <div class="hero-overlay container">
+        <h2>Welcome</h2>
+        <p>Welcome to Buffalo River Getaway, where cozy cabin stays and river adventures meet in the scenic wilderness of the Buffalo River.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="assets/img/DSC02228.jpg" alt="Camping by the lake">
+      <div class="hero-overlay container">
+        <h2>Welcome</h2>
+        <p>Welcome to Buffalo River Getaway, where cozy cabin stays and river adventures meet in the scenic wilderness of the Buffalo River.</p>
+      </div>
+    </div>
+
   </div>
+</section>
+
+<!-- ============================
+     MAIN CONTENT (GRADIENT STARTS HERE)
+============================= -->
+<main class="bro-main-index">
+
+  <!-- ============================
+       SERVICES GRID
+  ============================= -->
+  <section id="bro-services" class="container py-5">
+
+    <div id="services">
+
+      <!-- CABINS -->
+      <article id="cabin" class="service-card y-card">
+        <a href="cabin-rental.html">
+          <figure>
+            <img src="assets/img/bear-ridge-1.jpg" alt="Cabin Rentals">
+          </figure>
+          <div class="name-card">
+            <h2>Book Cabins</h2>
+            <span>&rarr;</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- CANOES -->
+      <article id="canoe" class="service-card y-card">
+        <a href="canoe-rental.html">
+          <figure>
+            <img src="assets/img/DSC01242.jpg" alt="Canoe Rentals">
+          </figure>
+          <div class="name-card">
+            <h2>Rent Canoes</h2>
+            <span>&rarr;</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- RIVER LEVELS -->
+      <article id="river-level" class="service-card b-card">
+        <a href="river-level.html">
+          <figure>
+            <img src="assets/img/DSC02248.jpg" alt="River Levels">
+          </figure>
+          <div class="name-card">
+            <h2>River Levels</h2>
+            <span>&rarr;</span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ============================
+       FIND US SECTION
+  ============================= -->
+  <section class="buffalo-find-us">
+    <div class="buffalo-find-us__container">
+
+      <div class="buffalo-find-us__content">
+        <h2>Find Us By the Buffalo River</h2>
+
+        <p class="buffalo-find-us__description">
+          Buffalo River Getaway offers a peaceful escape in the scenic upper Buffalo River region of Arkansas,
+          where cozy cabin stays and outdoor adventure come together. From relaxing at Bear Ridge Cabin to
+          planning a canoe trip on the Buffalo, guests can enjoy the natural beauty, quiet atmosphere, and
+          memorable experiences that make this area so special.
+        </p>
+
+        <ul class="buffalo-find-us__features">
+          <li>Located in the upper Buffalo River wilderness</li>
+          <li>Cozy Bear Ridge Cabin with modern amenities</li>
+          <li>Canoe rentals and shuttling services from Ponca</li>
+          <li>Close to hiking, scenic river views, and wildlife watching</li>
+        </ul>
+      </div>
+
+      <div class="buffalo-find-us__sidebar">
+        <div class="buffalo-find-us__image">
+          <img src="assets/img/buffalo-river-map.jpg" alt="buffalo map here" />
+        </div>
+
+        <div class="buffalo-find-us__info">
+          <p class="buffalo-find-us__address">AR-43, Compton, AR 72624</p>
+          <a class="buffalo-find-us__link"
+             href="https://maps.app.goo.gl/qvE8NRSkJMj2zKhE9"
+             target="_blank"
+             rel="noopener">
+            Get Directions
+          </a>
+
+          <h3>Contact Us</h3>
+          <a href="mailto:tswallace@ualr.edu">tswallace@ualr.edu</a>
+          <a href="mailto:blbauer@ualr.edu">blbauer@ualr.edu</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
+<!-- ============================
+     FOOTER
+============================= -->
 <footer class="bro-footer py-5">
+
+  <div class="footer-mountain"></div>
+
   <div class="container">
-    
+
     <div class="row align-items-center mb-4 text-center text-lg-start">
-      
+
       <div class="col-lg-4 mb-4 mb-lg-0 text-lg-start">
         <img src="assets/img/Screenshot 2026-04-09 173352-modified (2).png"
              alt="Buffalo River Getaway Logo"
@@ -77,7 +218,7 @@
         <a href="#" class="footer-link">Back to Top</a>
       </div>
       <div class="col-md-6 text-center text-md-end">
-        <p class="mb-0"> © Buffalo River Getaway 2026. All rights reserved.</p>
+        <p class="mb-0">© Buffalo River Getaway 2026. All rights reserved.</p>
       </div>
     </div>
 
