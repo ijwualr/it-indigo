@@ -832,7 +832,7 @@ button.show-graph:hover {
   font-size: 24px;
   line-height: 1.2;
   font-weight: 400;
-  color: #2365de;
+  color: #000000;
 }
 
 @media (max-width: 992px) {
@@ -907,9 +907,11 @@ button.show-graph:hover {
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "cabin canoe river";
+  align-items: stretch; 
 }
 
 .service-card {
+   height: 100%; 
   margin: 10px;
   border-radius: 15px;
   display: flex;
@@ -938,6 +940,7 @@ button.show-graph:hover {
   height: auto;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  height: 240px; 
   object-fit: cover;
 }
 

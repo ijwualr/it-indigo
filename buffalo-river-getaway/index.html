@@ -10,6 +10,84 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- ============================
+       FULLSCREEN IMAGE VIEWER CSS
+  ============================= -->
+  <style>
+    /* ============================
+   CLICK TO VIEW OVERLAY
+============================ */
+.image-clickable {
+  position: relative;
+  display: inline-block;
+}
+
+.click-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.image-clickable:hover .click-overlay {
+  opacity: 1;
+}
+
+/* Always visible enough on mobile */
+@media (max-width: 768px) {
+  .click-overlay {
+    opacity: 1;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
+
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .image-modal__content {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .image-modal__close {
+      position: absolute;
+      top: 20px;
+      right: 26px;
+      font-size: 48px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 300;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      .image-modal__close {
+        font-size: 38px;
+        top: 14px;
+        right: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -155,9 +233,11 @@
       </div>
 
       <div class="buffalo-find-us__sidebar">
-        <div class="buffalo-find-us__image">
-          <img src="assets/img/buffalo-river-map.jpg" alt="buffalo map here" />
-        </div>
+       <div class="buffalo-find-us__image image-clickable">
+  <span class="click-overlay">Click to View</span>
+  <img src="assets/img/buffalo-river-map.jpg" alt="buffalo map here" />
+</div>
+
 
         <div class="buffalo-find-us__info">
           <p class="buffalo-find-us__address">AR-43, Compton, AR 72624</p>
@@ -226,5 +306,47 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ============================
+     FULLSCREEN IMAGE VIEWER HTML
+============================= -->
+<div id="image-modal" class="image-modal">
+  <span class="image-modal__close">&times;</span>
+  <img id="image-modal-img" class="image-modal__content" alt="">
+</div>
+
+<!-- ============================
+     FULLSCREEN IMAGE VIEWER JS
+============================= -->
+<script>
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("image-modal-img");
+  const closeBtn = document.querySelector(".image-modal__close");
+
+  // Only the Find Us image
+  const findUsImage = document.querySelector(".buffalo-find-us__image img");
+
+  if (findUsImage) {
+    findUsImage.style.cursor = "zoom-in";
+    findUsImage.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = findUsImage.src;
+    });
+  }
+
+  // Close modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close when clicking outside the image
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
