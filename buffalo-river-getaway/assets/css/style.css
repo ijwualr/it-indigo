@@ -37,12 +37,12 @@ body {
 ========================================= */
 main.bro-main {
   flex: 1;
-  padding-top: 0px; /* desktop default */
+  padding-top: 0px; 
 }
 
 main.bro-main-river {
   flex: 1;
-  padding-top: 0px; /* desktop default */
+  padding-top: 0px; 
   background: linear-gradient(
     to bottom,
     rgba(52, 98, 157, 0.65),
@@ -52,7 +52,7 @@ main.bro-main-river {
 
 main.bro-main-contact {
   flex: 1;
-  padding-top: 0px; /* desktop default */
+  padding-top: 0px; 
   background: linear-gradient(
     to bottom,
     #4F622A,
@@ -62,7 +62,7 @@ main.bro-main-contact {
 
 main.bro-main-cabin {
   flex: 1;
-  padding-top: 0px; /* desktop default */
+  padding-top: 0px; 
   background: linear-gradient(
     to bottom,
     #D19A27,
@@ -72,7 +72,7 @@ main.bro-main-cabin {
 
 main.bro-main-canoe {
   flex: 1;
-  padding-top: 0px; /* desktop default */
+  padding-top: 0px; 
   background: linear-gradient(
     to bottom,
     #D19A27,
@@ -82,7 +82,7 @@ main.bro-main-canoe {
 
 main.bro-main-index {
   flex: 1;
-  padding-top: 0px; /* desktop default */
+  padding-top: 0px; 
   background: linear-gradient(
     to bottom,
     #4F622A,
@@ -380,7 +380,7 @@ button.show-graph:hover {
 .hero-slides {
   display: flex;
   flex-wrap: nowrap;
-  width: 300%; /* 3 slides */
+  width: 300%; 
   animation: heroSlideShow 12s infinite;
 }
 
@@ -530,6 +530,20 @@ button.show-graph:hover {
     min-height: 280px;
   }
 }
+@media (max-width: 991px) {
+  .hero-overlay {
+    left: calc(50% - 10px); /* shift overlay 10px left */
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-overlay h2 {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+}
+
 
 /* =========================================
    8. RIVER LEVELS
@@ -691,14 +705,12 @@ button.show-graph:hover {
 }
 
 @media (max-width: 991px) {
-  /* Make the article box fit mobile screens */
   #cabin-rental.container {
     max-width: 95%;
     padding: 20px;
     margin-top: 20px;
   }
 
-  /* Collapse the grid into a single column */
   #cabin-rental {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -710,13 +722,11 @@ button.show-graph:hover {
     gap: 20px;
   }
 
-  /* Make slideshow images scale properly */
   .cabin-slideshow img {
     height: auto;
     border-radius: 12px;
   }
 
-  /* Form spacing on mobile */
   #reserve-form {
     padding: 20px;
   }
@@ -1455,4 +1465,163 @@ button.show-graph:hover {
   color: #ffffff !important;
   opacity: 1 !important;        
   box-shadow: none !important;  
+}
+/* EXPLORE SECTION HEADING */
+.bro-explore-header {
+  width: min(92%, 1200px);
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.bro-explore-header h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #2c2d0c;
+  margin: 0;
+}
+
+/* EXPLORE CARD LABEL FONT */
+.bro-explore-card p {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Lilita One", sans-serif;   /* <-- added */
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 2;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .bro-explore-header h2 {
+    font-size: 36px;
+  }
+  .bro-explore-card p {
+    font-size: 1.6rem;
+  }
+}
+/* =========================================
+   EXPLORE SECTION
+========================================= */
+
+.bro-explore {
+  padding: 90px 0;
+  background: transparent;
+}
+
+.bro-explore-container {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.bro-explore-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.bro-explore-card figure img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.bro-explore-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.65));
+}
+
+.bro-explore-card p {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  z-index: 2;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 900px) {
+  .bro-explore-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .bro-explore-container {
+    grid-template-columns: 1fr;
+  }
+  .bro-explore-card figure img {
+    height: 280px;
+  }
+}
+/* EXPLORE SECTION HEADING */
+.bro-explore-header {
+  width: min(92%, 1200px);
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+.bro-explore-header h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  color: #2c2d0c;
+  margin: 0;
+}
+
+/* EXPLORE CARD LABEL FONT */
+.bro-explore-card p {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Lilita One", sans-serif;   /* <-- added */
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 2;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .bro-explore-header h2 {
+    font-size: 36px;
+  }
+  .bro-explore-card p {
+    font-size: 1.6rem;
+  }
+}
+
+.bro-explore h2 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: #2c2d0c;
+  margin-bottom: 40px;
+  line-height: 1;
+}
+
+#bro-services h3 {
+  font-family: "Lilita One", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: #2c2d0c;
+  margin-bottom: 40px;
+  line-height: 1;
 }
