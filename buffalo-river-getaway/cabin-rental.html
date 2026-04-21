@@ -56,11 +56,17 @@
 
   <!-- HERO SECTION -->
   <section class="cabin-hero">
-    <div class="cabin-hero-overlay"></div>
-    <div class="cabin-hero-content">
-      <h1>Cabin Rentals</h1>
-    </div>
-  </section>
+  <div class="cabin-hero-overlay"></div>
+
+  <div class="cabin-hero-content">
+    <h1>Cabin Rentals</h1>
+
+    <a href="#reserve-form" class="btn btn-primary cabin-hero-btn">
+      Reserve Now
+    </a>
+  </div>
+</section>
+
 
   <!-- CABIN CONTENT -->
   <section id="cabin-rental" class="container py-5">
@@ -113,6 +119,10 @@
     <!-- Reservation Form -->
     <div id="reserve-form" class="mb-5">
       <p class="fs-4 fw-bold">$195 for 1 night</p>
+
+       <form action="https://formspree.io/f/xkokgzlp" method="POST" class="reserve-form">
+        <label for="check-in">Name</label>
+        <input type="name" id="check-in" name="check_in_date" required>
 
       <form action="https://formspree.io/f/xkokgzlp" method="POST" class="reserve-form">
         <label for="check-in">Check-In Date</label>

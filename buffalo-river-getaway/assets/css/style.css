@@ -1064,3 +1064,395 @@ button.show-graph:hover {
     text-align: right !important;
   }
 }
+
+.cabin-hero-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+}
+.cabin-hero-btn {
+  background-color: #34629D !important;
+  border-color: #34629D !important;
+  color: #ffffff !important;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.cabin-hero-btn:hover {
+  background-color: #2b527f !important; /* slightly darker shade */
+  border-color: #2b527f !important;
+}
+/* =========================================
+   CANOE RENTAL — INTRO SECTION
+========================================= */
+
+.bro-main-canoe .intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 42px;
+  align-items: start;
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  padding: 90px 0;
+}
+
+.bro-main-canoe .section-tag {
+  color: #D19A27;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.bro-main-canoe .intro-copy h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: #34629D;
+  margin-bottom: 18px;
+}
+
+.bro-main-canoe .intro-copy p {
+  max-width: 640px;
+  font-size: 1.05rem;
+}
+
+/* FACT CARDS */
+.bro-main-canoe .fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.bro-main-canoe .fact-card {
+  background: #ffffff;
+  border: 1px solid rgba(209,154,39,0.35);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.bro-main-canoe .fact-card span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  color: #D19A27;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.bro-main-canoe .fact-card strong {
+  display: block;
+  font-size: 2rem;
+  color: #34629D;
+  margin-bottom: 4px;
+}
+
+.bro-main-canoe .fact-card small {
+  font-size: 1rem;
+  color: #6E5C2A;
+}
+
+/* =========================================
+   CANOE RENTAL — RATES GRID
+========================================= */
+
+.bro-main-canoe .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: min(92%, 900px);
+  margin: 40px auto;
+}
+
+.bro-main-canoe .column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bro-main-canoe .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #D9D9D9;
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+
+.bro-main-canoe .label {
+  font-weight: 700;
+  font-size: 18px;
+  color: #34629D;
+}
+
+.bro-main-canoe .price {
+  font-weight: 600;
+  font-size: 18px;
+  color: #6E5C2A;
+}
+
+@media (max-width: 600px) {
+  .bro-main-canoe .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   CANOE RENTAL — SHUTTLE SECTION
+========================================= */
+
+.bro-main-canoe .shuttle-section {
+  background:
+    linear-gradient(rgba(52,98,157,0.93), rgba(52,98,157,0.93)),
+    url('images/river-water-texture.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 90px 0;
+}
+
+.bro-main-canoe .shuttle-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 46px;
+  align-items: center;
+  width: min(92%, 1200px);
+  margin: 0 auto;
+}
+
+.bro-main-canoe .shuttle-copy h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin-bottom: 18px;
+}
+
+.bro-main-canoe .shuttle-copy p {
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.92);
+}
+
+.bro-main-canoe .shuttle-points {
+  display: grid;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.bro-main-canoe .shuttle-point {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.bro-main-canoe .shuttle-point strong {
+  display: block;
+  color: #D19A27;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ROUTE CARD */
+.bro-main-canoe .route-card {
+  background: #FFF5E4;
+  color: #6E5C2A;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.bro-main-canoe .route-card h3 {
+  color: #34629D;
+  font-size: 1.85rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.bro-main-canoe .route-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 0;
+}
+
+.bro-main-canoe .route-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(110,92,42,0.1);
+}
+
+.bro-main-canoe .route-list span {
+  font-weight: 600;
+  color: #34629D;
+}
+
+.bro-main-canoe .route-list strong {
+  color: #6E5C2A;
+}
+
+.bro-main-canoe .route-note {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* CTA BUTTON */
+.bro-main-canoe .btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #4F622A;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.bro-main-canoe .btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* CTA SECTION */
+.bro-main-canoe .cta {
+  padding: 90px 0;
+}
+
+.bro-main-canoe .cta-content {
+  border: 1px solid #D19A27;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.bro-main-canoe .cta h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.bro-main-canoe .cta p {
+  max-width: 700px;
+  font-size: 1.08rem;
+}
+
+@media (max-width: 900px) {
+  .bro-main-canoe .intro-grid,
+  .bro-main-canoe .shuttle-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .bro-main-canoe .fact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================
+   CANOE RENTAL — RESERVATION FORM FIX
+========================================= */
+
+.bro-main-canoe #reserve-form {
+  width: min(92%, 700px);
+  margin: 60px auto;
+  padding: 30px;
+  background: #fafafa;
+  border: 1px solid #d8cbb8;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.bro-main-canoe #reserve-form p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #34629D;
+  margin-bottom: 20px;
+}
+
+.bro-main-canoe #reserve-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.bro-main-canoe #reserve-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d8cbb8;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.bro-main-canoe #reserve-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #34629D;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bro-main-canoe #reserve-form button:hover {
+  background-color: #D19A27;
+}
+
+.bro-main-canoe .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px; 
+  margin: 50px auto;
+    width: min(95%, 1200px); 
+}
+
+.bro-main-canoe .grid .row {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.canoe-hero .center-btn {
+  background-color: #34629D !important;
+  border-color: #34629D !important;
+  color: #ffffff !important;
+
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.canoe-hero .center-btn:hover {
+  background-color: #2b527f !important;
+  border-color: #2b527f !important;
+  color: #ffffff !important;
+  opacity: 1 !important;        
+  box-shadow: none !important;  
+}

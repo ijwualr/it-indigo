@@ -38,14 +38,144 @@
 </nav>
 
 <main class="bro-main-canoe">
-<!-- HERO SECTION (matches River Levels page) -->
-<section class="canoe-hero">
-  <div class="canoe-hero-overlay"></div>
-  <div class="canoe-hero-content">
-    <h1>Canoe Rentals</h1>
+
+  <!-- KEEPING YOUR ORIGINAL HERO EXACTLY AS IS -->
+  <section class="canoe-hero">
+    <div class="canoe-hero-overlay"></div>
+    <div class="canoe-hero-content">
+      <h1>Canoe Rentals</h1>
+       <a href="#reserve-form" class="btn btn-primary center-btn">
+  Reserve Now
+</a>
+
+    </a>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section>
+    <div class="container intro-grid">
+      <div class="intro-copy">
+        <h2>Explore the Buffalo at your own pace</h2>
+        <p>
+          Enjoy a one-day canoe trip on the Buffalo National River. Our canoes are ready
+          for a full day of adventure, and shuttle service is available between river access
+          points to help guests complete one-way float trips with ease.
+        </p>
+      </div>
+
+      <div class="fact-grid">
+        <div class="fact-card">
+          <span>Canoe Pickup</span>
+          <strong>8:00 AM</strong>
+          <small>Morning departure</small>
+        </div>
+
+        <div class="fact-card">
+          <span>Must Return By</span>
+          <strong>6:00 PM</strong>
+          <small>Same-day return</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATES GRID -->
+  <div class="container">
+    <div class="grid">
+
+      <div class="column">
+        <div class="row"><div class="label">1 Canoe</div><div class="price">$67.00</div></div>
+        <div class="row"><div class="label">2 Canoes</div><div class="price">$134.00</div></div>
+        <div class="row"><div class="label">3 Canoes</div><div class="price">$201.00</div></div>
+        <div class="row"><div class="label">4 Canoes</div><div class="price">$268.00</div></div>
+        <div class="row"><div class="label">5 Canoes</div><div class="price">$335.00</div></div>
+      </div>
+
+      <div class="column">
+        <div class="row"><div class="label">6 Canoes</div><div class="price">$402.00</div></div>
+        <div class="row"><div class="label">7 Canoes</div><div class="price">$469.00</div></div>
+        <div class="row"><div class="label">8 Canoes</div><div class="price">$536.00</div></div>
+        <div class="row"><div class="label">9 Canoes</div><div class="price">$603.00</div></div>
+        <div class="row"><div class="label">10 Canoes</div><div class="price">$670.00</div></div>
+      </div>
+
+    </div>
   </div>
-</section>
+
+  <!-- SHUTTLE SECTION -->
+  <section class="shuttle-section">
+    <div class="container shuttle-layout">
+      <div class="shuttle-copy">
+        <span class="section-tag" style="color:#fff3cf;">River Shuttle Service</span>
+        <h2>Choose your route, and we’ll handle the river logistics</h2>
+        <p>
+          Since most float trips do not end where they begin, shuttle service makes it easier
+          to enjoy a one-way river experience. Select your preferred route from Ponca to one
+          of the access points below. Shuttle fees are listed separately from canoe rental rates.
+        </p>
+
+        <div class="shuttle-points">
+          <div class="shuttle-point">
+            <strong>Route-Based Pricing</strong>
+            Shuttle cost depends on the chosen river access point.
+          </div>
+          <div class="shuttle-point">
+            <strong>One Vehicle Covered</strong>
+            The listed price covers the shuttle cost for one vehicle.
+          </div>
+          <div class="shuttle-point">
+            <strong>Plan Your Float</strong>
+            Use Buffalo River mileage and float time resources to choose the best trip.
+          </div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <h3>Shuttle Pricing by Route</h3>
+        <p class="route-note">From Ponca to the following take-out points:</p>
+
+        <ul class="route-list">
+          <li><span>Steel Creek</span> <strong>$21</strong></li>
+          <li><span>Kyles</span> <strong>$40</strong></li>
+          <li><span>Pruitt</span> <strong>$55</strong></li>
+          <li><span>Ozark</span> <strong>$61</strong></li>
+          <li><span>Erbie</span> <strong>$92</strong></li>
+          <li><span>Hasty</span> <strong>$55</strong></li>
+          <li><span>Hwy 123 (Carver)</span> <strong>$65</strong></li>
+        </ul>
+
+        <div class="center-btn">
+          <a class="btn" href="https://www.nps.gov/buff/planyourvisit/river-accesses-mileage.htm" target="_blank">
+            View Float Distances
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Form -->
+    <div id="reserve-form" class="mb-5">
+      <p class="fs-4 fw-bold">Reserve Form</p>
+
+       <form action="https://formspree.io/f/xkokgzlp" method="POST" class="reserve-form">
+        <label for="check-in">Name</label>
+        <input type="name" id="check-in" name="check_in_date" required>
+
+      <form action="https://formspree.io/f/xkokgzlp" method="POST" class="reserve-form">
+        <label for="check-in">Check-In Date</label>
+        <input type="date" id="check-in" name="check_in_date" required>
+
+        <label for="guests">Number of Canoes</label>
+        <input type="number" id="guests" name="number_of_guests" min="1" required>
+
+        <button type="submit" class="btn btn-primary mt-3">Reserve</button>
+      </form>
+    </div>
+
+  </section>
 </main>
+
 
  <footer class="bro-footer py-5">
 
