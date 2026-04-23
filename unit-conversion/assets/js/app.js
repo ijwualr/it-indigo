@@ -47,11 +47,11 @@ function calculate() {
             ToUnit: toUnit.value
         },
         beforeSend: function () {
-            // Optional: show temporary loading indicator
+            
             document.getElementById("ToValue").value = "Calculating...";
         },
         success: function (response) {
-            // PHP returns numeric result
+           
             document.getElementById("ToValue").value = parseFloat(response).toFixed(6);
         },
         error: function (xhr, status, error) {
