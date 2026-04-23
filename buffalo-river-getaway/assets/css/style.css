@@ -55,7 +55,7 @@ main.bro-main-contact {
   padding-top: 0px; 
   background: linear-gradient(
     to bottom,
-    #4F622A,
+    #223103,
     #FFF5E4
   );
 }
@@ -83,11 +83,6 @@ main.bro-main-canoe {
 main.bro-main-index {
   flex: 1;
   padding-top: 0px; 
-  background: linear-gradient(
-    to bottom,
-    #4F622A,
-    #FFF5E4
-  );
 }
 
 #layout {
