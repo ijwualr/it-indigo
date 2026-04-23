@@ -9,12 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function calculate() {
     clearErrors();
 
-    let fromValue = document.getElementById("FromValue").value.trim();
-    let fromUnit = document.querySelector("input[name='FromUnit']:checked");
-    let toUnit = document.querySelector("input[name='ToUnit']:checked");
+    const fromValue = document.getElementById("FromValue").value.trim();
+    const fromUnit = document.querySelector("input[name='FromUnit']:checked");
+    const toUnit = document.querySelector("input[name='ToUnit']:checked");
 
     let valid = true;
 
+    // --- Validation ---
     if (fromValue === "") {
         showError("FromValueMsg", "Value is required");
         valid = false;
@@ -35,24 +36,29 @@ function calculate() {
 
     if (!valid) return;
 
-    const conversionToMeters = {
-        cm: 0.01,
-        m: 1,
-        km: 1000,
-        in: 0.0254,
-        ft: 0.3048,
-        yd: 0.9144,
-        mi: 1609.34
-    };
-
-    let value = parseFloat(fromValue);
-    let from = fromUnit.value;
-    let to = toUnit.value;
-
-    let meters = value * conversionToMeters[from];
-    let result = meters / conversionToMeters[to];
-
-    document.getElementById("ToValue").value = result.toFixed(6);
+    // --- AJAX call to PHP conversion service ---
+    $.ajax({
+        url: "https://brucebauer.info/assets/ITEC3650/unitsconversion.php",
+        type: "GET",
+        dataType: "json",
+        data: {
+            FromValue: fromValue,
+            FromUnit: fromUnit.value,
+            ToUnit: toUnit.value
+        },
+        beforeSend: function () {
+            // Optional: show temporary loading indicator
+            document.getElementById("ToValue").value = "Calculating...";
+        },
+        success: function (response) {
+            // PHP returns numeric result
+            document.getElementById("ToValue").value = parseFloat(response).toFixed(6);
+        },
+        error: function (xhr, status, error) {
+            alert("Error performing conversion: " + error);
+            document.getElementById("ToValue").value = "";
+        }
+    });
 }
 
 function clearform() {
@@ -74,7 +80,7 @@ function clearErrors() {
 function showError(id, msg) {
     const el = document.getElementById(id);
     el.textContent = msg;
-    el.style.display = "inline"; 
+    el.style.display = "inline";
 }
 
 function hideError(id) {
