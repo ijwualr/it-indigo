@@ -52,13 +52,20 @@ header.primary h1 {
 nav.primary {
   width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  align-items: flex-start;
   gap: 2rem;
-  padding: 0;
-  background: none;
-  border: none;
-  align-items: start; 
+}
+
+.nav-column-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+nav.primary > .semester-box {
+  flex: 1;
 }
 
 /* Semester Boxes */
@@ -151,13 +158,6 @@ nav.primary {
   border-radius: 50px;
 }
 
-/* Mobile View */
-@media (max-width: 700px) {
-  nav.primary {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Loading Screen */
 #loading-screen {
   position: fixed;
@@ -199,6 +199,7 @@ nav.primary {
     transform: rotate(360deg);
   }
 }
+
 /* Footer */
 footer {
   width: 100%;
@@ -220,9 +221,9 @@ footer {
   padding: 1rem 1.5rem;
 
   display: flex;
-  justify-content: center;   
+  justify-content: center;
   align-items: center;
-  gap: 2rem;             
+  gap: 2rem;
 
   color: white;
   text-shadow: 1px 1px 2px black;
@@ -249,6 +250,22 @@ footer {
   transform: scale(1.15);
 }
 
+/* Footer Icons */
+.footer-logos i {
+  font-size: 35px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  transition: transform 0.2s ease,
+              color 0.2s ease,
+              text-shadow 0.2s ease;
+}
+
+.footer-logos i:hover {
+  transform: scale(1.2);
+  color: #d477e2;
+  text-shadow: 2px 2px 4px #d477e2;
+}
+
 /* Back to Top Button */
 .footer-bar .back-to-top {
   color: white;
@@ -267,31 +284,18 @@ footer {
   box-shadow: 4px 4px 6px rgba(22, 32, 77, 0.75);
 }
 
-/* Mobile */
+/* Mobile View */
 @media (max-width: 700px) {
+  nav.primary {
+    flex-direction: column;
+  }
+
+  .nav-column-left {
+    gap: 2rem;
+  }
+
   .footer-bar {
     flex-direction: column;
     gap: 1rem;
   }
-}
-/* Footer Icons */
-.footer-logos {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.footer-logos i {
-  font-size: 35px;                    
-  color: white;                       
-  text-shadow: 1px 1px 2px black;     
-  transition: transform 0.2s ease,
-              color 0.2s ease,
-              text-shadow 0.2s ease;
-}
-
-.footer-logos i:hover {
-  transform: scale(1.2);
-  color: #d477e2;                      
-  text-shadow: 2px 2px 4px #d477e2;    
 }
