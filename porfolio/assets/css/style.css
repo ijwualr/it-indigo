@@ -1,7 +1,9 @@
 /* =========================================
    GLOBAL STYLES
 ========================================= */
-
+body {
+  margin: 0;
+}
 body {
     background-color: #f8f9fa;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -349,4 +351,29 @@ footer {
     footer {
         text-align: center !important;
     }
+}
+.experience-logo {
+  height: 100px;      /* adjust this number if you want bigger/smaller */
+  width: auto;       /* keeps the logo from stretching */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px auto; /* centers the logo and adds spacing */
+}
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .btn {
+  margin-top: auto;
 }
