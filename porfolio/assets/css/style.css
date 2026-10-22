@@ -388,17 +388,21 @@ form button {
   transform: scale(1.08);
 }
 
-/* Buttons inside the mobile PDF card (Download / Open) */
-.pdf-mobile-actions .btn,
-.pdf-mobile-actions a {
-  background-color: var(--maroon) !important;
-  border-color: var(--maroon) !important;
-  color: var(--white) !important;
+/* File icon on the mobile PDF card */
+.pdf-icon {
+  color: var(--maroon);
 }
-.pdf-mobile-actions .btn:hover,
-.pdf-mobile-actions a:hover {
-  background-color: var(--maroon-hover) !important;
-  border-color: var(--maroon-hover) !important;
+
+/* Any leftover Bootstrap "text-primary" uses maroon too */
+.text-primary {
+  color: var(--maroon) !important;
+}
+
+/* Buttons inside the mobile PDF card:
+   "View" = solid maroon, "Download" = maroon outline
+   (colors come from the Bootstrap overrides at the bottom) */
+.pdf-mobile-actions .btn {
+  min-width: 140px;
 }
 
 .pdf-mobile-card {
@@ -668,5 +672,53 @@ footer {
         padding: 0.4rem;
         font-size: 0.9rem;
         background-color: rgba(92, 10, 20, 0.8);
+    }
+}
+
+/* =========================================
+   WORK EXAMPLES — TITLE LINK + TECH TAGS
+   (buttons removed; the title link covers the whole card)
+========================================= */
+
+.card-title a {
+    color: var(--maroon-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card:hover .card-title a {
+    color: var(--maroon);
+}
+
+.card-body .card-text {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.card-tags {
+    margin-top: auto;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-badge {
+    background-color: var(--white);
+    color: var(--maroon);
+    border: 1px solid var(--maroon-border);
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Keyboard users: show focus around the whole card */
+.card:has(.stretched-link:focus-visible) {
+    outline: 3px solid var(--maroon);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .card-tags {
+        justify-content: center;
     }
 }
