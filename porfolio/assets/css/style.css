@@ -722,3 +722,16 @@ footer {
         justify-content: center;
     }
 }
+/* PDF viewer: page-sized and centered, not full width */
+.pdf-viewer-wrapper {
+    max-width: 750px;      /* change this to make the page bigger or smaller */
+    margin: 0 auto;
+}
+
+.pdf-viewer-wrapper iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 8.5 / 11;
+    border: 2px solid var(--grey);
+    border-radius: 8px;
+}
