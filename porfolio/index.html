@@ -9,6 +9,158 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <style>
+      /* ---- Hero polish (matches the site's maroon theme) ---- */
+      .hero-wrap {
+        background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 70%, var(--maroon-hover) 100%);
+        border-radius: 1rem;
+        padding: 3rem 2.5rem;
+        color: var(--white);
+        box-shadow: 0 1.5rem 3rem rgba(92, 10, 20, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-wrap::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.1), transparent 55%);
+        pointer-events: none;
+      }
+      .hero-wrap h1,
+      .hero-wrap p { position: relative; z-index: 1; color: var(--white); }
+      .hero-wrap .lead { color: var(--maroon-light); font-weight: 500; min-height: 1.6em; }
+
+      .hero-wrap .profile-img {
+        border: 4px solid var(--white) !important;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+      .hero-wrap .profile-img:hover {
+        transform: scale(1.04) rotate(-1deg);
+        box-shadow: 0 1rem 2.25rem rgba(0, 0, 0, 0.45);
+      }
+
+      .typed-cursor {
+        display: inline-block;
+        margin-left: 2px;
+        animation: blink 0.9s step-start infinite;
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+
+      /* ---- Scroll-reveal ---- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---- Button polish ---- */
+      .btn.btn-outline-primary {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .btn.btn-outline-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0.5rem 1rem rgba(128, 0, 0, 0.25);
+      }
+
+      blockquote.blockquote {
+        position: relative;
+        font-style: italic;
+        font-size: 1.15rem;
+        max-width: 42rem;
+        margin: 0 auto;
+        color: var(--text);
+      }
+      blockquote.blockquote::before {
+        content: "\201C";
+        font-size: 3rem;
+        font-family: Georgia, serif;
+        color: var(--maroon);
+        opacity: 0.3;
+        position: absolute;
+        top: -1.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* ---- Pitch-to-quote thread: ties the elevator pitch to the closing quote ---- */
+      .pitch-thread {
+        position: relative;
+      }
+      .pitch-thread > div {
+        position: relative;
+        z-index: 1;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+      /* The connecting line only runs behind the two quote sections, never behind
+         the Profile Links grid, so it can't cut across a button. */
+      .thread-segment {
+        position: relative;
+      }
+      .thread-segment::before {
+        content: "";
+        position: absolute;
+        top: 3.25rem;
+        bottom: 3.25rem;
+        left: 50%;
+        width: 2px;
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom, var(--maroon) 0%, var(--maroon-border) 50%, var(--maroon) 100%);
+        opacity: 0.22;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .thread-segment > * {
+        position: relative;
+        z-index: 1;
+      }
+      /* Knock the line out from behind readable text so it doesn't cut through words */
+      .pitch-thread blockquote.blockquote,
+      .pitch-thread .thread-caption {
+        display: block;
+        width: fit-content;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background: var(--white);
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+      .pitch-thread h2 {
+        background: var(--white);
+        display: table;
+        padding-right: 1.25rem;
+      }
+      .thread-dot {
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin: 0 auto 2rem;
+        border-radius: 50%;
+        background: var(--maroon);
+        box-shadow: 0 0 0 5px var(--maroon-light);
+      }
+      .thread-dot-end {
+        margin: 2.5rem auto 0;
+      }
+      .thread-caption {
+        display: block;
+        font-size: 0.95rem;
+        font-style: italic;
+        color: var(--grey-text);
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .pitch-thread h2 {
+        margin-bottom: 2rem !important;
+      }
+    </style>
+
 </head>
 
 <body>
@@ -35,67 +187,86 @@
 
 <!-- Profile Section -->
 <div class="container mt-5">
-  <div class="row align-items-center">
-    <div class="col-md-4">
-      <img src="assets/img/profile.jpg" class="profile-img">
-
-    </div>
-    <div class="col-md-8">
-      <h1 class="fw-bold">Isaac Wilson</h1>
-      <p class="lead">Web Developer • IT Student • Creative Designer</p>
-      <p>I specialize in web development, usability, and creative digital design. This portfolio showcases my academic work, projects, and professional development.</p>
+  <div class="hero-wrap">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center text-md-start">
+        <img src="assets/img/profile.jpg" class="profile-img" style="max-width: 220px;">
+      </div>
+      <div class="col-md-8">
+        <h1 class="fw-bold">Isaac Wilson</h1>
+        <p class="lead"><span id="roleTyped"></span><span class="typed-cursor">|</span></p>
+        <p>I specialize in web development, usability, and creative digital design. This portfolio showcases my academic work, projects, and professional development.</p>
+      </div>
     </div>
   </div>
 </div>
-<!-- Quick Links Section (Homepage Only) -->
-<div class="container mt-5">
-  <h2 class="mb-3">Profile Links</h2>
-  <div class="row">
 
-    <div class="col-md-4 mb-3">
-      <a href="https://www.linkedin.com/in/isaac-wilson-501566300/" class="btn btn-outline-primary w-100">
-        <i class="fa-brands fa-linkedin fa-lg me-2"></i> LinkedIn Profile
-      </a>
-    </div>
+<!-- Pitch-to-quote thread: visually + narratively connects the opener to the closing quote -->
+<div class="pitch-thread">
 
-    <div class="col-md-4 mb-3">
-      <a href="https://www.instagram.com/_isauce_/" class="btn btn-outline-primary w-100">
-        <i class="fa-brands fa-instagram fa-lg me-2"></i> Instagram Profile
-      </a>
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <a href="assets/img/Isaac_Wilson_Resume_2026.pdf" class="btn btn-outline-primary w-100">
-        <i class="fa-solid fa-file-pdf fa-lg me-2"></i> Resume PDF
-      </a>
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <a href="https://dot.cards/isauce" class="btn btn-outline-primary w-100">
-        <i class="fa-solid fa-id-card fa-lg me-2"></i> Dot Profile
-      </a>
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <a href="https://www.facebook.com/isaacwilsonwb/" class="btn btn-outline-primary w-100">
-        <i class="fa-brands fa-facebook fa-lg me-2"></i> Facebook Profile
-      </a>
-    </div>
-
-    <div class="col-md-4 mb-3">
-      <a href="https://github.com/ijwualr" class="btn btn-outline-primary w-100">
-        <i class="fa-brands fa-github fa-lg me-2"></i> GitHub Profile
-      </a>
-    </div>
-
+  <!-- Elevator Pitch Section -->
+  <div class="container mt-5 pt-3 text-center reveal thread-segment">
+    <hr class="my-4">
+    <span class="thread-dot" aria-hidden="true"></span>
+    <blockquote class="blockquote">
+      <p class="mb-0">I build web experiences that are as functional as they are intentional — merging code, usability, and design into one seamless result.</p>
+    </blockquote>
+    <p class="thread-caption mb-0">That mindset shows up in everything below.</p>
   </div>
-</div>
 
-<div class="container mt-5 text-center">
-  <hr class="my-4">
-  <blockquote class="blockquote">
-    <p class="mb-0">“When design is simple, the experience becomes effortless.”</p>
-  </blockquote>
+  <!-- Quick Links Section (Homepage Only) -->
+  <div class="container mt-5 pt-4 reveal">
+    <h2 class="mb-3">Profile Links</h2>
+    <div class="row gy-2">
+
+      <div class="col-md-4 mb-4">
+        <a href="https://www.linkedin.com/in/isaac-wilson-501566300/" class="btn btn-outline-primary w-100">
+          <i class="fa-brands fa-linkedin fa-lg me-2"></i> LinkedIn Profile
+        </a>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <a href="https://www.instagram.com/_isauce_/" class="btn btn-outline-primary w-100">
+          <i class="fa-brands fa-instagram fa-lg me-2"></i> Instagram Profile
+        </a>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <a href="assets/img/Isaac_Wilson_Resume_2026.pdf" class="btn btn-outline-primary w-100">
+          <i class="fa-solid fa-file-pdf fa-lg me-2"></i> Resume PDF
+        </a>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <a href="https://dot.cards/isauce" class="btn btn-outline-primary w-100">
+          <i class="fa-solid fa-id-card fa-lg me-2"></i> Dot Profile
+        </a>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <a href="https://www.facebook.com/isaacwilsonwb/" class="btn btn-outline-primary w-100">
+          <i class="fa-brands fa-facebook fa-lg me-2"></i> Facebook Profile
+        </a>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <a href="https://github.com/ijwualr" class="btn btn-outline-primary w-100">
+          <i class="fa-brands fa-github fa-lg me-2"></i> GitHub Profile
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container mt-5 pt-4 pb-3 text-center reveal thread-segment">
+    <hr class="my-4">
+    <p class="thread-caption">Which is why, in the end, it comes back to this:</p>
+    <blockquote class="blockquote">
+      <p class="mb-0">“When design is simple, the experience becomes effortless.”</p>
+    </blockquote>
+    <span class="thread-dot thread-dot-end" aria-hidden="true"></span>
+  </div>
+
 </div>
 
 
@@ -112,6 +283,56 @@
       backToTopButton.classList.remove('show');
     }
   });
+
+  backToTopButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- Typewriter effect for the role line -->
+<script>
+  const roles = ['Web Developer', 'IT Student', 'Creative Designer'];
+  const typedEl = document.getElementById('roleTyped');
+  let roleIndex = 0, charIndex = 0, deleting = false;
+
+  function typeLoop() {
+    if (!typedEl) return;
+    const current = roles[roleIndex];
+
+    if (!deleting) {
+      charIndex++;
+      typedEl.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(typeLoop, 1400);
+        return;
+      }
+    } else {
+      charIndex--;
+      typedEl.textContent = current.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+    }
+    setTimeout(typeLoop, deleting ? 40 : 80);
+  }
+  typeLoop();
+</script>
+
+<!-- Scroll-reveal for sections below the fold -->
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => revealObserver.observe(el));
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
